@@ -1,0 +1,18 @@
+.skill-card {
+  min-height: 140px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 237, 78, 0.05));
+  }
+}
+
+.soft-skill-card {
+  min-height: 180px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 237, 78, 0.05));
+  }
+}
+

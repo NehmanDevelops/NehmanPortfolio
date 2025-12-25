@@ -3,3 +3,16 @@
     --tw-bg-opacity: 1;
     background-color: rgb(9 3 17 / var(--tw-bg-opacity));
 }
+
+.education-card {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+        border-color: rgba(255, 215, 0, 0.6);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+        transform: translateY(-2px);
+    }
+}

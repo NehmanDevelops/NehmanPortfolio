@@ -1,0 +1,12 @@
+.resume-button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}
+

@@ -4,12 +4,17 @@ import Navbar from './Navbar';
 import Tech from './Tech';
 import Experience from './Experience';
 import Project from './Project';
+import ProjectEnhanced from './ProjectEnhanced';
 import Contact from './Contact';
 import Content from './Content';
 import Profile from './Profile';
 import Achievement from './Achievement';
 import Education from './Education';
-import Footer from './Footer'
+import About from './About';
+import Footer from './Footer';
+import Skills from './Skills';
+import SalesExperience from './SalesExperience';
+import BeyondTheCode from './BeyondTheCode';
 
 export {
   Hero,
@@ -18,6 +23,7 @@ export {
   Tech,
   Experience,
   Project,
+  ProjectEnhanced,
   Education,
   Contact,
   EarthCanvas, 
@@ -27,4 +33,8 @@ export {
   Profile,
   Footer,
   Achievement,
+  About,
+  Skills,
+  SalesExperience,
+  BeyondTheCode,
 }

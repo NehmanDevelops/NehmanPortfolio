@@ -5,7 +5,7 @@ import {
     crypto,oop,yml,crud,dwld,onetomany,
     trie,ds,cg,
     port_3d, jsp, chitchat, notes, react1,
-    be,sql, mini, snl,
+    be,sql, mini, snl, pinpoint, pricepatrol, nehmanbot,
   } from "../assets";
 
   const profiles = [
@@ -115,20 +115,24 @@ import {
 
   const list = [
     {
-      id: "java",
-      title: "Java",
+      id: "all",
+      title: "All",
     },
     {
-      id: "c++",
-      title: "C++",
+      id: "fullstack",
+      title: "FullStack",
     },
     {
-      id: "web",
-      title: "Web Dev",
+      id: "frontend",
+      title: "Frontend",
     },
     {
-      id: "other",
-      title: "Other",
+      id: "backend",
+      title: "Backend",
+    },
+    {
+      id: "coming-soon",
+      title: "Coming Soon/Blog",
     },
   ];
 
@@ -361,26 +365,36 @@ import {
       source_code_link: "https://github.com/shinchancode/3d-react-portfolio",
     },
     {
-      name: "React portfolio",
+      name: "PricePatrol",
       description:
-        "Website made using React in the FrontEnd, Nodejs and Express in the BackEnd. Responsive webpage is made with user friendly interface",
+        "PricePatrol is a local grocery price comparison web application that helps Canadians find the lowest grocery prices in Toronto. The application displays an interactive map showing local grocery stores with color-coded price indicators (below average, average, above average). Features include user accounts, favorite items tracking, Google Maps integration for directions, and personalized store recommendations. Built as a team project that won 1st Place in a hackathon.",
       tags: [
         {
-          name: "nodejs",
+          name: "HTML",
           color: "blue-text-gradient",
         },
         {
-          name: "React",
+          name: "CSS",
           color: "green-text-gradient",
         },
         {
-          name: "html css",
+          name: "JavaScript",
           color: "pink-text-gradient",
         },
+        {
+          name: "Leaflet Maps",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Team Project",
+          color: "green-text-gradient",
+        },
       ],
-      image: react1,
-      source_link: "https://shinchancode.github.io/React-Portfolio/",
-      source_code_link: "https://github.com/shinchancode/React-Portfolio",
+      image: pricepatrol,
+      source_link: "https://tl7rpr.csb.app/",
+      source_code_link: "https://github.com/NehmanDevelops/PricePatrol",
+      isHackathonWinner: true,
+      teamMembers: ["Sean", "Agasti Kulkarni", "Nehman Rahimi", "Chirayu Singhania"],
     },
     {
       name: "30 Days of JavaScript",
@@ -405,26 +419,27 @@ import {
       source_code_link: "https://github.com/shinchancode/30-Days-of-Javascript",
     },
     {
-      name: "Chit Chat Application",
+      name: "NehmanBot",
       description:
-        "Real-Time, event based communication in Nodejs and browser-based Chat application. Uses Socket.io for implementation for WebSockets protocol. This application built using Node.js, Express, Socket.io and Render (Hosting)",
+        "NehmanBot is a powerful Discord bot designed to enhance your server with fun, utility, and moderation features. It runs 24/7 on Heroku, handling moderation, music, polls, statistics, games, and AI-powered commands.",
       tags: [
         {
-          name: "Chatting",
+          name: "Python",
           color: "blue-text-gradient",
         },
         {
-          name: "socket.io",
+          name: "Discord Bot",
           color: "green-text-gradient",
         },
         {
-          name: "JavaScript",
+          name: "Heroku",
           color: "pink-text-gradient",
         },
       ],
-      image: chitchat,
-      source_link: "https://chit-chat-app.onrender.com/",
-      source_code_link: "https://github.com/shinchancode/Chit-Chat-Real_time_chat_app",
+      image: nehmanbot,
+      source_link:
+        "https://discord.com/oauth2/authorize?client_id=1318508506567147560&permissions=8&integration_type=0&scope=bot",
+      source_code_link: "https://github.com/NehmanDevelops/Nehman-Bot",
     },
     {
       name: "Notes Application",
@@ -629,39 +644,179 @@ import {
       ],
       link: "https://dev.to/shinchancode",
     },
+    {
+      title: "Sales Associate",
+      company_name: "GUESS?, Inc. — Vaughan, ON",
+      icon: "https://img.icons8.com/color/480/000000/sales-performance.png",
+      iconBg: "#E6DEDD",
+      date: "Sept 2024 – Present",
+      link: "",
+      points: [
+        "Hit 120%+ of daily targets; averaged $1.5k+ sales per shift.",
+        "Lifted conversion by 15% via cross-sell, upsell, and loyalty sign-ups.",
+        "30+ units/shift with accurate POS, cash handling, and policy compliance.",
+      ],
+      link: "#",
+    },
+    {
+      title: "Retail Event Associate",
+      company_name: "WWE — Money in the Bank Event — Toronto, ON",
+      icon: "https://img.icons8.com/color/480/000000/sales-performance.png",
+      iconBg: "#E6DEDD",
+      date: "July 2024",
+      link: "",
+      points: [
+        "Supported sales for 500+ attendees; contributed to $10k+ one-day revenue.",
+        "Raised average transaction value by 20% with tailored recommendations.",
+        "Kept checkouts moving during peak traffic; resolved escalations quickly and professionally.",
+      ],
+      link: "#",
+    },
+    {
+      title: "Sales Associate",
+      company_name: "Urban Planet — Toronto, ON",
+      icon: "https://img.icons8.com/color/480/000000/sales-performance.png",
+      iconBg: "#E6DEDD",
+      date: "June 2023 – Feb 2024",
+      link: "",
+      points: [
+        "Maintained $65+ average basket; exceeded add-on KPIs.",
+        "Resolved 50+ requests/shift (exchanges, refunds, billing) with accuracy and compliance.",
+        "Ranked top 10% weekly sales; merchandising support improved conversion at peak.",
+      ],
+      link: "#",
+    },
+    {
+      title: "Safety Assistant",
+      company_name: "Rinx Ontario (The Bubble) — Toronto, ON",
+      icon: "https://img.icons8.com/color/480/000000/sales-performance.png",
+      iconBg: "#E6DEDD",
+      date: "July 2022 – Oct 2022",
+      link: "",
+      points: [
+        "Supervised 30+ children/day; enforced safety; high parent satisfaction.",
+        "Resolved concerns with 95% success and provided appropriate solutions.",
+        "Led recreational/educational activities to boost engagement and safety.",
+      ],
+      link: "#",
+    },
+    {
+      title: "Experience",
+      company_name: "",
+      icon: "https://img.icons8.com/color/480/000000/certificate.png",
+      iconBg: "#E6DEDD",
+      date: "Sept 2023 – June 2024",
+      link: "",
+      points: [
+        "Completed comprehensive certification program in communication and sales.",
+        "Developed advanced skills in customer relations and sales techniques.",
+        "Applied learned strategies to exceed performance targets in retail roles.",
+      ],
+      link: "#",
+      isHighlighted: true,
+    },
   ];
   
   const educations = [
     {
-      degree: "Bachelor of Engineering",
-      branch:
-        "Information Technology",
-      marks:
-        "SGPA : 9.42 / 10",
-      name: "Army Institute of Technology Dighi, Pune",
-      year: "(2019 - 2023)",
+      degree: "BSC. Honours Specialized Computer Science",
+      stream: "Software Development Stream",
+      name: "York University, Lassonde School of Engineering",
+      location: "Toronto, Ontario, Canada",
+      graduationYear: "2027",
+      currentYear: "Second Year",
       image: clg,
-    },
-    {
-      degree:
-        "12th Grade",
-      branch : "Science",
-      marks:
-        "Percentage : 89.88 %",
-      name: "Kendriya Vidyalaya RHE Khadki Pune",
-      year: "2018",
-      image: school,
-    },
-    {
-      degree:
-        "10th Grade",
-      branch: "SSC",
-      marks:
-        "Percentage : 95 %",
-      name: "Kendriya Vidyalaya RHE Khadki Pune",
-      year: "2016",
-      image: school,
     },
   ];
   
-  export { list, profiles, technologies, experiences, educations, achievements };
+  // Helper function to categorize projects
+  const categorizeProject = (project, category) => ({ ...project, category });
+
+  // Combined projects with categories
+  const allProjects = [
+    // FullStack Projects - projects with both frontend and backend
+    categorizeProject({
+      name: "PinPoint",
+      description: "PinPoint is a smart grocery planning and health-focused web application built to help users—especially students—find the best grocery prices near them based on their location, diet preferences, and meal plans. Features include Cheap Grocery Finder, Price Matcher with QR codes, GrocyBot AI assistant, and DAPR dynamic recipe system that adapts to local prices.",
+      tags: [
+        { name: "React", color: "blue-text-gradient" },
+        { name: "TypeScript", color: "green-text-gradient" },
+        { name: "Python Flask", color: "pink-text-gradient" },
+        { name: "TailwindCSS", color: "blue-text-gradient" },
+        { name: "AI/ML", color: "green-text-gradient" },
+      ],
+      image: pinpoint,
+      source_link: "http://localhost:5174/",
+      source_code_link: "https://github.com/NehmanDevelops/pinpoint",
+    }, "fullstack"),
+    ...webProject
+      .filter(p => p.name === "PricePatrol" || p.name === "NehmanBot")
+      .map(p => categorizeProject(p, "fullstack")),
+    
+    // Frontend Projects - frontend-only projects
+    categorizeProject({
+      name: "Lions Gate Security Website",
+      description: "A professional frontend website for a local security company, featuring modern design, responsive layout, and engaging user experience. The website showcases security services, company information, and provides an easy way for clients to learn about and contact the business.",
+      tags: [
+        { name: "HTML", color: "blue-text-gradient" },
+        { name: "CSS", color: "green-text-gradient" },
+        { name: "JavaScript", color: "pink-text-gradient" },
+        { name: "Frontend", color: "blue-text-gradient" },
+        { name: "Responsive Design", color: "green-text-gradient" },
+      ],
+      image: "/securityshowcase.mp4",
+      source_link: "http://localhost:5173/",
+      source_code_link: "https://github.com/NehmanDevelops/Lions-Gate-Securitywebsite",
+      isVideo: true,
+    }, "frontend"),
+    ...webProject
+      .filter(p => p.name === "3D React Portfolio" || p.name === "30 Days of JavaScript" || p.name === "Notes Application")
+      .map(p => categorizeProject(p, "frontend")),
+    
+    // Backend Projects - backend-focused projects
+    ...javaProject.map(p => categorizeProject(p, "backend")),
+    ...cProject.map(p => categorizeProject(p, "backend")),
+    ...otherProject
+      .filter(p => p.name === "DBMS Lab" || p.name === "SQL : Library Management System" || p.name === "Multilingual Multiple Choice Question Generation")
+      .map(p => categorizeProject(p, "backend")),
+    categorizeProject({
+      name: "NehmanBot",
+      description: "NehmanBot is a powerful Discord bot designed to enhance servers with fun, utility, and moderation features. The bot runs 24/7 on Heroku cloud hosting, ensuring seamless performance without manual intervention. Features include moderation commands (kick, ban, purge, timeout, mute), statistics tracking, poll creation, music playback from YouTube, interactive games (Tic-Tac-Toe, dice rolling), and AI-powered poem generation.",
+      tags: [
+        { name: "Python", color: "blue-text-gradient" },
+        { name: "Discord.py", color: "green-text-gradient" },
+        { name: "Heroku", color: "pink-text-gradient" },
+        { name: "Bot Development", color: "blue-text-gradient" },
+        { name: "Cloud Hosting", color: "green-text-gradient" },
+      ],
+      image: port_3d, // Placeholder - can be updated with actual bot image
+      source_link: "https://discord.com/oauth2/authorize?client_id=1318508506567147560&permissions=8&integration_type=0&scope=bot",
+      source_code_link: "https://github.com/NehmanDevelops/Nehman-Bot",
+    }, "backend"),
+    
+    // Coming Soon/Blog Projects
+    categorizeProject({
+      name: "Tech Blog",
+      description: "Coming soon: A personal blog sharing insights on software development, best practices, and tech trends.",
+      tags: [
+        { name: "blog", color: "blue-text-gradient" },
+        { name: "coming-soon", color: "green-text-gradient" },
+      ],
+      image: port_3d, // Placeholder image
+      source_link: "#",
+      source_code_link: "#",
+    }, "coming-soon"),
+    categorizeProject({
+      name: "AI Project",
+      description: "Coming soon: An exciting AI-powered application that will revolutionize how we interact with technology.",
+      tags: [
+        { name: "AI", color: "blue-text-gradient" },
+        { name: "coming-soon", color: "green-text-gradient" },
+      ],
+      image: port_3d, // Placeholder image
+      source_link: "#",
+      source_code_link: "#",
+    }, "coming-soon"),
+  ];
+
+  export { list, profiles, technologies, experiences, educations, achievements, allProjects };

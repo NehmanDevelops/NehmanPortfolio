@@ -39,12 +39,16 @@ import port_3d from "./project/react.png";
 import jsp from "./project/jsp.png";
 import notes from "./project/notes.png";
 import chitchat from "./project/chitChat.png";
+import nehmanbot from "./project/nehmanbot.png";
 import react1 from "./project/react1.png";
 
 import be from "./project/mcq.avif";
 import sql from "./project/sql.jpg";
 import mini from "./project/library.png";
 import snl from "./project/snl.jpeg";
+import pinpoint from "./project/pinpoint1.png";
+import pricepatrol from "./project/pricepatrol.png";
+import profilePhoto from "./project/IMG_7970.png";
 
 export {
   logo,
@@ -72,5 +76,5 @@ export {
   oop,crud,dwld,onetomany,yml,
   trie,ds,cg,
   port_3d, jsp, chitchat, notes, react1,
-  be,sql, mini, snl,
+  be,sql, mini, snl, pinpoint, pricepatrol, nehmanbot, profilePhoto,
 };

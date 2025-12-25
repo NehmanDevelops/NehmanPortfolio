@@ -23,7 +23,14 @@
 
     &.active
     {
-        background-color: #398485;
-        color: white;
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: black;
+        border-color: #ffd700;
+    }
+    
+    &:hover
+    {
+        border-color: #ffd700;
+        color: #ffd700;
     }
 }

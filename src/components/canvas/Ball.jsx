@@ -11,7 +11,11 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+  // Convert image object to URL string if needed (for Next.js imports)
+  const imgUrl = typeof props.imgUrl === 'string' 
+    ? props.imgUrl 
+    : (props.imgUrl?.src || props.imgUrl?.default?.src || props.imgUrl);
+  const [decal] = useTexture([imgUrl]);
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>

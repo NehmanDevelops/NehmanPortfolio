@@ -1,156 +1,156 @@
-# 3D React Portfolio
+# Jekyll & Hyde Portfolio
 
+A stunning, highly interactive personal portfolio website showcasing dual expertise in software development and sales. Built with Next.js, featuring a dramatic split-screen design with immersive animations and personality-based navigation.
 
-# [Personal Portfolio - 3D React Portfolio](https://shinchancode.github.io/3d-react-portfolio/)
-<b>Created a responsive react website using amazing features of CSS, HTML and Javascript framework React with 3D graphics and animations. I have used ThreeJS 3D Developer tools for this Portfolio.
+## 🎭 Concept
 
-Implemented my own Portfolio as Website, Where I have added all my projects and experiences. I have hosted it with the help of github gh-pages. I keep on making changes accordingly.</b>
+**"One mind, two masters: Code by day, closes by night."**
 
-![3D Portfolio](https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/1.png)
+This portfolio presents a "Jekyll & Hyde" split personality theme:
+- **Developer Side**: Dark mode with matrix rain effects, terminal-style UI, neon green accents
+- **Sales Side**: Luxurious bright mode with gold/red accents, confetti animations, bold typography
+- **Interactive Switch**: Dramatic transformation between the two personalities
 
-## View Live Demo
-<pre><center><a href="https://shinchancode.github.io/3d-react-portfolio/"><b>https://shinchancode.github.io/3d-react-portfolio/</b></a></center></pre>
+## ✨ Features
 
+- **Split-Screen Landing Page**: Choose between Developer and Sales sides
+- **Dramatic Transitions**: Full-page animations when switching personalities
+- **Matrix Rain Effect**: Animated code rain on Developer side
+- **Confetti Animation**: Celebratory animations on Sales side
+- **Interactive Components**: Hover effects, cursor trails, and micro-interactions
+- **Responsive Design**: Fully responsive across all devices
+- **Modern Tech Stack**: Next.js 14, React, Framer Motion, Tailwind CSS
 
-## Introduction
-The most impressive websites in the world use 3D graphics and animations to bring their content to life. See here how to build your own ThreeJS 3D Developer Portfolio today! 
- 
-In this project, you'll use these technologies:
-- **ThreeJS** -  an incredibly powerful 3D graphics library that enables you to render and animate captivating 3D models with ease.
-- **React Three Fiber** - a widely adopted library that seamlessly integrates ThreeJS into React, allowing you to create stunning 3D graphics while harnessing the full potential of React's capabilities.
-- **TailwindCSS** - a highly popular utility-first CSS styling framework that empowers you to craft visually stunning websites with minimal effort.
-- **Framer Motion** - the go-to library for adding captivating animations to your React websites, breathing life into your creations and making them truly stand out.
+## 🚀 Getting Started
 
-### This portfolio contains:
+### Prerequisites
 
-- Load, customize, and create visually impressive 3D models and geometries. We'll also see to manipulate various lighting setups and understand how to position objects effectively within a 3D space.
-- Implement industry-standard best practices, making our code reusable and scalable through techniques like Higher Order Components (HOCs), enhancing the efficiency and maintainability of our projects.
-- Incorporate a functional email form on our website, allowing visitors to easily reach out to you, thus enhancing user engagement and interactivity.
-- Ensuring that our website exhibits optimal responsiveness across all devices, offering a seamless user experience. Additionally, you'll learn to optimize our site's performance using techniques such as Suspense and Preload.
-- Prepare to embark on an exciting journey that will transform you into a skilled ThreeJS 3D Developer, enabling you to create visually stunning and interactive web experiences that will leave a lasting impression on audience.
- 
- <hr>
-# Getting Started with Create React App
+- Node.js 18+ 
+- npm or yarn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Installation
 
-### `npx create-react-app`
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd 3d-react-portfolio
+```
 
-To start with react app
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Available Scripts
+3. Run the development server:
+```bash
+npm run dev
+```
 
-In the project directory, you can run:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### `npm start`
+## 📁 Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+├── app/
+│   ├── layout.jsx          # Root layout with metadata
+│   ├── page.jsx            # Main page with split-screen logic
+│   └── globals.css         # Global styles and animations
+├── components/
+│   ├── SplitScreen.jsx     # Split-screen landing component
+│   ├── PersonalitySwitch.jsx # Interactive switch button
+│   ├── DeveloperSide.jsx   # Developer personality view
+│   ├── SalesSide.jsx       # Sales personality view
+│   ├── MatrixRain.jsx      # Matrix rain animation
+│   ├── Confetti.jsx        # Confetti animation
+│   ├── CursorEffect.jsx    # Custom cursor effects
+│   └── sections/
+│       ├── DeveloperAbout.jsx
+│       ├── DeveloperProjects.jsx
+│       ├── DeveloperSkills.jsx
+│       ├── DeveloperContact.jsx
+│       ├── SalesAbout.jsx
+│       ├── SalesProjects.jsx
+│       ├── SalesSkills.jsx
+│       └── SalesContact.jsx
+├── public/                 # Static assets
+└── package.json
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎨 Customization
 
-### `npm i node-sass`
+### Update Personal Information
 
-Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.\
-See the section about [running tests](https://github.com/sass/node-sass) for more information.
+1. **Developer Side**: Edit components in `components/sections/Developer*.jsx`
+2. **Sales Side**: Edit components in `components/sections/Sales*.jsx`
 
-### `npm i ityped`
+### Colors & Styling
 
-Enter in any string, and watch it type at the speed you've set, backspace what it's typed,\
-and begin a new sentence for however many strings you've set.
+Modify `tailwind.config.js` to customize:
+- `dev-green`: Developer side accent color
+- `sales-gold`: Sales side accent color
+- `sales-red`: Sales side secondary color
 
-See the section about [deployment](https://unpkg.com/ityped@1.0.3) for more information.
+### Content
 
-### `npm i @material-ui/core`
-### `npm i @material-ui/core`
+Update the following with your information:
+- Projects/Deals in respective section components
+- Skills and technologies
+- Contact information
+- Social media links
+- Statistics and achievements
 
-React components for faster and easier web development. Build your own design system, or start with Material Design.
+## 🚢 Deployment
 
-See the section about [MUI Documentation](https://mui.com/) for more information.
+### Deploy to Vercel (Recommended)
 
+1. Push your code to GitHub
+2. Import your repository in [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and configure the build
+4. Your site will be live at `your-project.vercel.app`
 
-### `npm run build`
+### Manual Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Build the project:
+```bash
+npm run build
+```
 
-Other libraries and dependencies which needs to be installed before working on the project
+2. Start the production server:
+```bash
+npm start
+```
 
-### `npm create vite@latest ./ -- --template react`
-### `npm install -D tailwindcss`
-### `npx tailwindcss init`
-### `npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion react-router-dom`
-### `npm run dev`
+### Environment Variables
 
-### `npm install --legacy-peer-deps -D postcss autoprefixer`
-### `npx tailwindcss init -p`
-### `npm install --save-dev sass`
-### `npm i ityped`
-### `npm install --legacy-peer-deps three`
+If you need to add environment variables (e.g., for contact forms), create a `.env.local` file:
 
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-### `npm install react-icons --save`
-### `npm install --legacy-peer-deps react-parallax-tilt`
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Framework**: Next.js 14 (App Router)
+- **UI Library**: React 18
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **3D Graphics**: Three.js (optional, for future enhancements)
+- **Type Safety**: TypeScript (optional)
 
-## Learn More
+## 📝 License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project is open source and available under the [MIT License](LICENSE).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🤝 Contributing
 
-### Deployment
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-<hr>
+## 📧 Contact
 
-## [SnapShots in Laptop View](https://shinchancode.github.io/3d-react-portfolio/)
+For questions or inquiries, please use the contact forms in the portfolio.
 
-![3D Portfolio Laptop](https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/1.png)
+---
 
-![3D Portfolio Laptop](https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/2.png)
-
-![3D Portfolio Laptop](https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/3.png)
-
-![3D Portfolio Laptop](https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/4.png)
-
-![3D Portfolio Laptop](https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/5.png)
-
-![3D Portfolio Laptop](https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/6.png)
-
-<hr>
-
-## [SnapShots in Mobile View](https://shinchancode.github.io/3d-react-portfolio/)
-
-<div align="center">
-<img src="https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/p1.jpg" width="250px" height="400"/>
-
-<img src="https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/p2.jpg" width="250px" height="400"/>
-
-<img src="https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/p3.jpg" width="250px" height="400"/>
-</div>
-<br>
-
-<div align="center">
-<img src="https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/p4.png" width="250px" height="400"/>
-
-<img src="https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/p5.png" width="250px" height="400"/>
-
-<img src="https://github.com/shinchancode/3d-react-portfolio/blob/main/Images/p6.png" width="250px" height="400"/>
-</div>  
-
-### Connect with me:
-
-[<img align="left" alt="codeSTACKr.com" width="22px" src="https://img.icons8.com/?size=512&id=n9d0Hm43JCPK&format=png" />][website]
-[<img align="left" alt="codeSTACKr | Twitter" width="22px" src="https://img.icons8.com/fluency/48/twitter.png" />][twitter]
-[<img align="left" alt="codeSTACKr | LinkedIn" width="22px" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" />][linkedin]
-[<img align="left" alt="codeSTACKr | Instagram" width="22px" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" />][instagram]
-
-<br />
-
-[website]: https://shinchancode.github.io/3d-react-portfolio/
-[twitter]: https://twitter.com/CodeShinchan
-[instagram]: https://www.instagram.com/aarti.rathiii
-[linkedin]: https://www.linkedin.com/in/aarti-rathi-a6031814b/
+**Built with ❤️ and a split personality**

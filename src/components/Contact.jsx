@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -124,8 +126,12 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className='flex-[0.5] bg-black-100 p-8 rounded-2xl earth'
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
+        <p className={styles.sectionSubText}>Let's Connect</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <p className={`${styles.sectionSubText} mt-3 max-w-3xl text-gray-400`}>
+          I'm always open to discussing new opportunities, projects, or just having a chat about tech. 
+          Feel free to reach out!
+        </p>
 
         <form
           ref={formRef}
@@ -178,12 +184,12 @@ const Contact = () => {
         <div className="mt-5 contact__options">
           <article className="contact__option">
             <MdEmail />
-            <a href="mailto:aarti.rathi1710@gmail.com" target="_blank" className="blue-text-gradient">aarti.rathi1710@gmail.com</a>
+            <a href="mailto:nehmanmain@gmail.com" target="_blank" className="blue-text-gradient">nehmanmain@gmail.com</a>
           </article>
           <article className="contact__option">
             <BsWhatsapp />
-            <a href="https://api.whatsapp.com/send/?phone=917040031669&text&app_absent=0&lang=en" target="_blank" className="blue-text-gradient">
-              +91 7040031669
+            <a href="https://api.whatsapp.com/send/?phone=14167276134&text&app_absent=0&lang=en" target="_blank" className="blue-text-gradient">
+              4167276134
             </a>
           </article>
         </div>
