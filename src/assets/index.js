@@ -35,7 +35,7 @@ import trie from "./project/trie.jpg";
 import ds from "./project/ds.jpg";
 import cg from "./project/cg.jpg";
 
-import port_3d from "./project/react.png";
+import port_3d from "./project/nehmanportfolio.png";
 import jsp from "./project/jsp.png";
 import notes from "./project/notes.png";
 import chitchat from "./project/chitChat.png";
