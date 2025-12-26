@@ -21,69 +21,103 @@ const EducationCard = ({
   graduationYear,
   currentYear,
   image,
-}) => (
-  <div className='w-full'>
-    {/* Education Header */}
-    <div className='flex items-center gap-4 mb-8'>
-      <div className='w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#ffd700] to-[#ffed4e] rounded-lg flex items-center justify-center'>
-        <BsMortarboard className='text-black text-2xl md:text-3xl' />
-      </div>
-      <h3 className='text-white text-3xl md:text-4xl font-bold'>Education</h3>
-    </div>
+  certificateImage,
+}) => {
+  const isRBC = name === "RBC Academy";
+  
+  return (
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.2, 0.75)}
+      className={`w-full group ${isRBC ? 'max-w-2xl ml-auto' : ''}`}
+    >
+      <div className={`bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-3xl ${isRBC ? 'p-4 md:p-5' : 'p-6 md:p-8'} border-2 border-[#ffd700]/20 hover:border-[#ffd700]/50 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#ffd700]/20 relative overflow-hidden`}>
+        {/* Background glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ffd700]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        <div className={`relative z-10 flex ${isRBC ? 'flex-row items-center' : 'flex-col md:flex-row items-start'} gap-4 md:gap-6`}>
+          {/* University Logo or Certificate */}
+          <div className='flex-shrink-0'>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className={`${isRBC ? 'w-32 h-32 md:w-36 md:h-36' : certificateImage ? 'w-full max-w-xs md:max-w-sm lg:max-w-md' : 'w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44'} bg-white rounded-2xl flex items-center justify-center ${isRBC ? 'p-2' : 'p-3 md:p-4'} shadow-xl border-4 border-[#ffd700] group-hover:border-[#ffed4e] transition-all`}>
+              {certificateImage ? (
+                <img
+                  src={certificateImage}
+                  alt={`${name} Certificate`}
+                  className='w-full h-full object-contain rounded-lg'
+                  onError={(e) => {
+                    console.error(`${name} certificate failed to load`);
+                    e.target.style.background = '#1a1a1a';
+                  }}
+                />
+              ) : (
+                <img
+                  src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image || "/yorkicon.png")}
+                  alt={name}
+                  className='w-full h-full object-contain'
+                  onError={(e) => {
+                    console.error(`${name} logo failed to load`);
+                    e.target.style.background = '#1a1a1a';
+                  }}
+                />
+              )}
+            </motion.div>
+          </div>
 
-    {/* Main Content */}
-    <div className='flex items-start gap-10 md:gap-12'>
-      {/* University Logo */}
-      <div className='flex-shrink-0'>
-        <div className='w-40 h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 bg-white rounded-2xl flex items-center justify-center p-4 shadow-lg border-2 border-[#ffd700]/30'>
-          <img
-            src="/yorkicon.png"
-            alt={name}
-            className='w-full h-full object-contain'
-            onError={(e) => {
-              console.error('York University logo failed to load');
-              e.target.style.background = '#1a1a1a';
-            }}
-          />
+          {/* Education Details */}
+          <div className={`${isRBC ? 'flex-1' : 'flex-1 w-full'}`}>
+            {/* University Name */}
+            <h4 className={`text-white ${isRBC ? 'text-base md:text-lg' : certificateImage ? 'text-lg md:text-xl' : 'text-2xl md:text-3xl lg:text-4xl'} font-bold mb-2 group-hover:text-[#ffd700] transition-colors`}>
+              {name}
+            </h4>
+            
+            {/* Degree */}
+            <p className={`text-[#ffd700] ${isRBC ? 'text-sm' : certificateImage ? 'text-sm md:text-base' : 'text-lg md:text-xl lg:text-2xl'} font-semibold mb-1`}>
+              {degree}
+            </p>
+            
+            {/* Stream */}
+            {stream && (
+              <p className='text-[#ffd700]/80 text-base md:text-lg font-medium mb-4'>
+                {stream}
+              </p>
+            )}
+
+            {/* Tags */}
+            <div className={`flex flex-wrap gap-2 ${isRBC ? 'mt-2' : 'mt-4'} md:gap-3`}>
+              {location && (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className={`bg-gradient-to-r from-black/60 to-black/40 border-2 border-[#ffd700]/30 rounded-lg ${isRBC ? 'px-3 py-1.5' : 'px-4 py-2'} flex items-center gap-2 hover:border-[#ffd700] hover:bg-[#ffd700]/10 transition-all cursor-default`}>
+                  <MdLocationOn className={`text-[#ffd700] ${isRBC ? 'text-sm' : 'text-base md:text-lg'} flex-shrink-0`} />
+                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-sm md:text-base'} font-medium`}>{location}</span>
+                </motion.div>
+              )}
+              {graduationYear && (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className={`bg-gradient-to-r from-black/60 to-black/40 border-2 border-[#ffd700]/30 rounded-lg ${isRBC ? 'px-3 py-1.5' : 'px-4 py-2'} hover:border-[#ffd700] hover:bg-[#ffd700]/10 transition-all cursor-default`}>
+                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-sm md:text-base'} font-medium`}>
+                    {currentYear ? 'Expected Graduation' : 'Graduated'}: <span className='text-[#ffd700]'>{graduationYear}</span>
+                  </span>
+                </motion.div>
+              )}
+              {currentYear && (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className={`bg-gradient-to-r from-black/60 to-black/40 border-2 border-[#ffd700]/30 rounded-lg ${isRBC ? 'px-3 py-1.5' : 'px-4 py-2'} hover:border-[#ffd700] hover:bg-[#ffd700]/10 transition-all cursor-default`}>
+                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-sm md:text-base'} font-medium`}>
+                    Current: <span className='text-[#ffd700]'>{currentYear}</span>
+                  </span>
+                </motion.div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Education Details */}
-      <div className='flex-1'>
-        {/* University Name */}
-        <h4 className='text-white text-2xl md:text-3xl font-bold mb-3'>{name}</h4>
-        
-        {/* Degree */}
-        <p className='text-[#ffd700] text-xl md:text-2xl font-semibold mb-2'>{degree}</p>
-        
-        {/* Stream */}
-        {stream && (
-          <p className='text-[#ffd700] text-lg md:text-xl font-medium mb-6'>{stream}</p>
-        )}
-
-        {/* Tags */}
-        <div className='flex flex-wrap gap-3'>
-          {location && (
-            <div className='bg-black/50 border-2 border-[#ffd700]/30 rounded-xl px-5 py-3 flex items-center gap-2 hover:border-[#ffd700]/60 transition-all'>
-              <MdLocationOn className='text-[#ffd700] text-lg' />
-              <span className='text-white text-base font-medium'>{location}</span>
-            </div>
-          )}
-          {graduationYear && (
-            <div className='bg-black/50 border-2 border-[#ffd700]/30 rounded-xl px-5 py-3 hover:border-[#ffd700]/60 transition-all'>
-              <span className='text-white text-base font-medium'>Expected Graduation: {graduationYear}</span>
-            </div>
-          )}
-          {currentYear && (
-            <div className='bg-black/50 border-2 border-[#ffd700]/30 rounded-xl px-5 py-3 hover:border-[#ffd700]/60 transition-all'>
-              <span className='text-white text-base font-medium'>Current: {currentYear}</span>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  </div>
-);
+    </motion.div>
+  );
+};
 
 const Education = () => {
   return (
@@ -102,9 +136,9 @@ const Education = () => {
         animate="show"
         className={`-mt-20 justify-center pb-10 ${styles.paddingX}`}
       >
-        <div className='bg-[#1a1a1a] rounded-3xl p-10 md:p-14 lg:p-16 w-full max-w-6xl mx-auto border-2 border-[#ffd700]/30 hover:border-[#ffd700]/50 transition-all shadow-lg shadow-[#ffd700]/10'>
+        <div className='w-full max-w-6xl mx-auto space-y-6 md:space-y-8'>
           {educations.map((education, index) => (
-            <EducationCard key={education.name} index={index} {...education} />
+            <EducationCard key={`${education.name}-${index}`} index={index} {...education} />
           ))}
         </div>
       </motion.div>

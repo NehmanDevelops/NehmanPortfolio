@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { AiOutlineGithub } from 'react-icons/ai'
 import { ImLinkedin } from 'react-icons/im'
-import { HiOutlineMail, HiOutlineDocumentText } from 'react-icons/hi'
+import { HiOutlineMail, HiOutlineDocumentText, HiArrowDown } from 'react-icons/hi'
 import { profilePhoto } from '../src/assets'
 
 export default function HeroIntro() {
@@ -121,7 +121,7 @@ export default function HeroIntro() {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
           >
-            Second-Year York University Computer Science student transitioning from sales-oriented roles.
+            Second-Year Computer Science Student at York University | Full-Stack Developer with Sales & Customer Experience
           </motion.p>
 
           {/* Social Media Icons */}
@@ -160,7 +160,7 @@ export default function HeroIntro() {
               <HiOutlineMail className="text-xl" />
             </motion.a>
             <motion.a
-              href="https://drive.google.com/drive/folders/13YGuvdkXQdyFzfuJd3YdUaG99dhCPz22?pli=1"
+              href="/Nehman_Rahimi.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300 gap-2"
@@ -174,6 +174,34 @@ export default function HeroIntro() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-30'
+      >
+        <motion.a 
+          href='#about'
+          className='text-software-gold hover:text-yellow-400 transition-colors cursor-pointer'
+          whileHover={{ scale: 1.1 }}
+        >
+          <motion.div
+            animate={{
+              y: [0, 8, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut"
+            }}
+          >
+            <HiArrowDown className='text-3xl md:text-4xl' />
+          </motion.div>
+        </motion.a>
+      </motion.div>
     </div>
   )
 }

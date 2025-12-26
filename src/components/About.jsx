@@ -86,6 +86,16 @@ const About = () => {
                   <p className='text-[#ffd700] font-bold text-lg mb-1'>Full-Stack</p>
                   <p className='text-gray-400 text-sm'>Developer</p>
                 </motion.div>
+
+                {/* Hackathon Winner Badge */}
+                <motion.div 
+                  className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-6 py-4 hover:border-[#ffd700] transition-all cursor-default'
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <p className='text-[#ffd700] font-bold text-lg mb-1'>1x</p>
+                  <p className='text-gray-400 text-sm'>Hackathon Winner</p>
+                </motion.div>
               </div>
 
               {/* Description - Enhanced formatting */}
@@ -100,6 +110,26 @@ const About = () => {
                   customer needs and solving problems quickly. These skills now translate to creating intuitive user experiences and 
                   debugging complex issues.
                 </p>
+
+                {/* Quick Stats for Recruiters */}
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 pt-4'>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
+                    <p className='text-[#ffd700] text-2xl md:text-3xl font-bold'>5+</p>
+                    <p className='text-gray-400 text-sm mt-1'>Projects</p>
+                  </div>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
+                    <p className='text-[#ffd700] text-2xl md:text-3xl font-bold'>15+</p>
+                    <p className='text-gray-400 text-sm mt-1'>Technologies</p>
+                  </div>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
+                    <p className='text-[#ffd700] text-2xl md:text-3xl font-bold'>2nd</p>
+                    <p className='text-gray-400 text-sm mt-1'>Year CS</p>
+                  </div>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
+                    <p className='text-[#ffd700] text-lg md:text-xl font-bold'>Open to</p>
+                    <p className='text-gray-400 text-sm mt-1'>Internships 2026</p>
+                  </div>
+                </div>
 
                 <p className='text-[#ffd700] text-base md:text-lg font-medium leading-relaxed italic'>
                   Excited to bring my problem-solving mindset and rapid learning ability to a development team.

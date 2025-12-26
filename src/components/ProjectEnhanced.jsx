@@ -21,6 +21,7 @@ const ProjectCard = ({
   teamMembers,
   isVideo,
   category,
+  problemItSolves,
 }) => {
   return (
     <motion.div
@@ -129,6 +130,16 @@ const ProjectCard = ({
             {description}
           </p>
 
+          {/* Problem it solves */}
+          {problemItSolves && (
+            <div className="mb-4 pb-4 border-b border-[#ffd700]/20">
+              <p className="text-[#ffd700] font-semibold text-sm mb-2">Problem it solves:</p>
+              <p className="text-gray-300 text-sm leading-relaxed group-hover:text-white transition-colors">
+                {problemItSolves}
+              </p>
+            </div>
+          )}
+
           {/* Tech Stack Badges */}
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.slice(0, 4).map((tag) => (
@@ -160,6 +171,49 @@ const ProjectCard = ({
   );
 };
 
+// Coming Soon Project Card Component
+const ComingSoonCard = ({ project, index }) => {
+  return (
+    <motion.div
+      key={`coming-soon-${project.name}-${index}`}
+      variants={fadeIn("up", "spring", index * 0.2, 0.75)}
+      className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border-2 border-[#ffd700]/40 rounded-2xl p-6 hover:border-[#ffd700]/80 hover:shadow-lg hover:shadow-[#ffd700]/20 transition-all"
+      whileHover={{ y: -5 }}
+    >
+      {project.image && (
+        <div className="mb-4 flex justify-center items-center h-32 bg-[#0a0a0a] rounded-xl overflow-hidden">
+          <img
+            src={typeof project.image === 'string' ? project.image : (project.image?.src || project.image?.default?.src || project.image)}
+            alt={project.name}
+            className="max-w-full max-h-full object-contain"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      )}
+      <div className="flex items-center gap-2 mb-3">
+        <div className="w-2 h-2 bg-[#ffd700] rounded-full animate-pulse"></div>
+        <span className="text-[#ffd700] text-xs font-semibold uppercase">WIP</span>
+      </div>
+      <h4 className="text-white font-bold text-xl mb-2">{project.name}</h4>
+      <p className="text-gray-400 text-sm leading-relaxed mb-4">{project.description}</p>
+      {project.tags && project.tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {project.tags.map((tag) => (
+            <span
+              key={`${project.name}-${tag.name}`}
+              className="px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-[#ffd700]/30 border-2 border-[#ffd700]/60 hover:border-[#ffd700] hover:bg-[#ffd700]/40 transition-all shadow-sm shadow-[#ffd700]/20"
+            >
+              #{tag.name}
+            </span>
+          ))}
+        </div>
+      )}
+    </motion.div>
+  );
+};
+
 const ProjectEnhanced = () => {
   const [selected, setSelected] = useState("all");
 
@@ -168,22 +222,41 @@ const ProjectEnhanced = () => {
     { id: "fullstack", title: "Full Stack", icon: BsFilter },
     { id: "frontend", title: "Frontend", icon: BsFilter },
     { id: "backend", title: "Backend", icon: BsFilter },
-    { id: "coming-soon", title: "Coming Soon", icon: BsFilter },
+    { id: "coming-soon", title: "WIP/Coming Soon", icon: BsFilter },
   ];
 
+  // Get all coming-soon projects
+  const comingSoonProjects = useMemo(() => {
+    return allProjects.filter((project) => {
+      return project && 
+             project.name && 
+             project.category === "coming-soon";
+    });
+  }, []);
+
+  // Filter projects based on selection
   const filteredProjects = useMemo(() => {
     if (selected === "all") {
-      // Show every project (including backend/frontend/fullstack); keep order from constants
-      const projects = allProjects.filter(p => p && p.name);
-      return projects;
+      // Exclude coming-soon from "All" view
+      return allProjects.filter((project) => {
+        return project && 
+               project.name && 
+               project.category !== "coming-soon";
+      });
     }
 
     if (selected === "coming-soon") {
-      return allProjects.filter((p) => p && p.name && p.category === "coming-soon");
+      // Return coming-soon projects
+      return comingSoonProjects;
     }
 
-    return allProjects.filter((p) => p && p.name && p.category === selected);
-  }, [selected]);
+    // Return projects matching the selected category
+    return allProjects.filter((project) => {
+      return project && 
+             project.name && 
+             project.category === selected;
+    });
+  }, [selected, comingSoonProjects]);
 
   return (
     <div className="w-full py-20">
@@ -221,33 +294,32 @@ const ProjectEnhanced = () => {
 
       {/* Projects Grid */}
       {selected === "coming-soon" ? (
-        <div className="space-y-8">
-          <motion.div variants={textVariant()} className="mb-8">
-            <h3 className="text-[#ffd700] text-3xl font-bold mb-4">Coming Soon:</h3>
+        <motion.div 
+          variants={staggerContainer(0.1, 0.1)}
+          initial="hidden"
+          animate="show"
+          className="space-y-8"
+        >
+          <motion.div variants={textVariant()}>
+            <h3 className="text-[#ffd700] text-3xl font-bold mb-2">WIP / Coming Soon</h3>
+            <p className="text-gray-400 text-sm mb-8">Projects currently in development</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={`coming-soon-${index}`}
-                variants={fadeIn("up", "spring", index * 0.2, 0.75)}
-                className="bg-[#1a1a1a] border-2 border-[#ffd700]/30 rounded-2xl p-6 hover:border-[#ffd700]/60 transition-all opacity-60"
-              >
-                <h4 className="text-white font-bold text-xl mb-2">{project.name}</h4>
-                <p className="text-gray-400 text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={`${project.name}-${tag.name}`}
-                      className={`px-3 py-1 rounded text-xs ${tag.color} bg-[#ffd700]/10 border border-[#ffd700]/30`}
-                    >
-                      {tag.name}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+          {comingSoonProjects.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {comingSoonProjects.map((project, index) => (
+                <ComingSoonCard 
+                  key={`coming-soon-project-${project.name}-${index}`}
+                  project={project} 
+                  index={index} 
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <p className="text-gray-400 text-lg">No projects in development at the moment.</p>
+            </div>
+          )}
+        </motion.div>
       ) : (
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"

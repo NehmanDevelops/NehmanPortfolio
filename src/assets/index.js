@@ -17,6 +17,7 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import threejs from "./tech/threejs.svg";
+import openai from "./tech/openai.png";
 
 import holopin from "./holopin.png";
 import hf from "./hf.svg";
@@ -66,6 +67,7 @@ export {
   reactjs,
   tailwind,
   threejs,
+  openai,
   hf,holopin,
   bny,
   demo,

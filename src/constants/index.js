@@ -7,6 +7,7 @@ import {
     port_3d, jsp, chitchat, notes, react1,
     be,sql, mini, snl, pinpoint, pricepatrol, nehmanbot,
   } from "../assets";
+import robloxIcon from "../components/download.png";
 
   const profiles = [
     {
@@ -129,10 +130,6 @@ import {
     {
       id: "backend",
       title: "Backend",
-    },
-    {
-      id: "coming-soon",
-      title: "Coming Soon/Blog",
     },
   ];
 
@@ -368,6 +365,7 @@ import {
       name: "PricePatrol",
       description:
         "PricePatrol is a local grocery price comparison web application that helps Canadians find the lowest grocery prices in Toronto. The application displays an interactive map showing local grocery stores with color-coded price indicators (below average, average, above average). Features include user accounts, favorite items tracking, Google Maps integration for directions, and personalized store recommendations. Built as a team project that won 1st Place in a hackathon.",
+      problemItSolves: "Canadians in Toronto struggle to find the best grocery prices across different stores, often wasting time and money shopping at expensive locations. PricePatrol solves this by providing a visual, interactive map that instantly shows which stores have the lowest prices for specific items, helping users save money and make informed shopping decisions.",
       tags: [
         {
           name: "HTML",
@@ -701,19 +699,19 @@ import {
       link: "#",
     },
     {
-      title: "Experience",
-      company_name: "",
-      icon: "https://img.icons8.com/color/480/000000/certificate.png",
+      title: "Food Sales Associate",
+      company_name: "Cedar Fair Entertainment Company — Toronto, ON",
+      icon: "https://img.icons8.com/color/480/000000/sales-performance.png",
       iconBg: "#E6DEDD",
-      date: "Sept 2023 – June 2024",
+      date: "Jun 2021 – Oct 2021",
       link: "",
       points: [
-        "Completed comprehensive certification program in communication and sales.",
-        "Developed advanced skills in customer relations and sales techniques.",
-        "Applied learned strategies to exceed performance targets in retail roles.",
+        "Served 200-300 guests daily in a fast-paced, high-volume food service environment, consistently delivering friendly and efficient customer service under tight deadlines.",
+        "Resolved customer complaints and issues with a ~95% satisfaction rate by quickly identifying needs, offering solutions, and following up as needed.",
+        "Maintained strict sanitation standards, including regular cleaning of workstations and equipment to ensure compliance with health and safety protocols.",
+        "Multitasked across cash handling, order preparation, stocking, and merchandising while managing long queues during peak park hours.",
       ],
       link: "#",
-      isHighlighted: true,
     },
   ];
   
@@ -725,7 +723,14 @@ import {
       location: "Toronto, Ontario, Canada",
       graduationYear: "2028",
       currentYear: "Second Year",
-      image: clg,
+      image: "/yorkicon.png",
+    },
+    {
+      degree: "RBC Academy Graduate",
+      name: "RBC Academy",
+      location: "Canada",
+      graduationYear: "2024",
+      certificateImage: "/rbcacademy.png",
     },
   ];
   
@@ -738,6 +743,7 @@ import {
     categorizeProject({
       name: "PinPoint",
       description: "PinPoint is a smart grocery planning and health-focused web application built to help users—especially students—find the best grocery prices near them based on their location, diet preferences, and meal plans. Features include Cheap Grocery Finder, Price Matcher with QR codes, GrocyBot AI assistant, and DAPR dynamic recipe system that adapts to local prices.",
+      problemItSolves: "Students and budget-conscious shoppers struggle to find the cheapest grocery prices and plan meals around their budget. PinPoint solves this by providing location-based price comparison, personalized meal planning that adapts to local prices, and an AI assistant to help with grocery planning decisions.",
       tags: [
         { name: "React", color: "blue-text-gradient" },
         { name: "TypeScript", color: "green-text-gradient" },
@@ -757,6 +763,7 @@ import {
     categorizeProject({
       name: "Lions Gate Security Website",
       description: "A professional frontend website for a local security company, featuring modern design, responsive layout, and engaging user experience. The website showcases security services, company information, and provides an easy way for clients to learn about and contact the business.",
+      problemItSolves: "Local security companies often lack a professional online presence, making it difficult for potential clients to learn about services, view credentials, and easily contact the business. This website solves that by providing a modern, accessible platform that builds trust and makes it easy for clients to connect with the security services they need.",
       tags: [
         { name: "HTML", color: "blue-text-gradient" },
         { name: "CSS", color: "green-text-gradient" },
@@ -775,6 +782,7 @@ import {
         const portfolioProject = { ...p };
         portfolioProject.name = "NehmanPortfolio";
         portfolioProject.description = "A stunning, highly interactive personal portfolio website showcasing dual expertise in software development and sales. Built with Next.js 14 and React, featuring a dramatic split-screen design with immersive animations, 3D graphics, and personality-based navigation. The portfolio includes sections for About Me, Beyond the Code, Education, Projects, Skills, and Experience with a modern, responsive design.";
+        portfolioProject.problemItSolves = "Traditional portfolios are static and don't effectively showcase the full range of a professional's skills, especially when someone has expertise in multiple domains (like development and sales). This portfolio solves that by providing an interactive, visually engaging platform that demonstrates both technical and interpersonal skills through a unique split-personality design, making it memorable and effective for potential employers and clients.";
         portfolioProject.tags = [
           { name: "Next.js", color: "blue-text-gradient" },
           { name: "React", color: "green-text-gradient" },
@@ -792,6 +800,7 @@ import {
     categorizeProject({
       name: "NehmanBot",
       description: "NehmanBot is a powerful Discord bot designed to enhance servers with fun, utility, and moderation features. The bot runs 24/7 on Heroku cloud hosting, ensuring seamless performance without manual intervention. Features include moderation commands (kick, ban, purge, timeout, mute), statistics tracking, poll creation, music playback from YouTube, interactive games (Tic-Tac-Toe, dice rolling), and AI-powered poem generation.",
+      problemItSolves: "Discord server administrators need automated tools to manage their communities efficiently without constant manual intervention. NehmanBot solves this by providing comprehensive moderation features, entertainment options, and utility functions that keep servers engaging and well-managed 24/7, reducing the workload on moderators.",
       tags: [
         { name: "Python", color: "blue-text-gradient" },
         { name: "Discord.py", color: "green-text-gradient" },
@@ -803,6 +812,21 @@ import {
       source_link: "https://discord.com/oauth2/authorize?client_id=1318508506567147560&permissions=8&integration_type=0&scope=bot",
       source_code_link: "https://github.com/NehmanDevelops/Nehman-Bot",
     }, "backend"),
+    
+    // Coming Soon Projects
+    categorizeProject({
+      name: "Personalized Roblox Game",
+      description: "An exciting new Roblox game currently in development. This project will feature engaging gameplay mechanics, immersive environments, and interactive elements designed to provide players with a unique gaming experience.",
+      tags: [
+        { name: "Roblox", color: "blue-text-gradient" },
+        { name: "Lua", color: "green-text-gradient" },
+        { name: "Game Development", color: "pink-text-gradient" },
+        { name: "3D Design", color: "blue-text-gradient" },
+      ],
+      image: robloxIcon,
+      source_link: "#",
+      source_code_link: "#",
+    }, "coming-soon"),
   ];
 
   export { list, profiles, technologies, experiences, educations, achievements, allProjects };

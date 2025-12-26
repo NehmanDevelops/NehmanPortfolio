@@ -81,7 +81,7 @@ const Navbar = () => {
             Contact
           </a>
           <a
-            href="https://drive.google.com/drive/folders/13YGuvdkXQdyFzfuJd3YdUaG99dhCPz22?pli=1"
+            href="/Nehman_Rahimi.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={`text-[15px] font-medium cursor-pointer transition-colors ${

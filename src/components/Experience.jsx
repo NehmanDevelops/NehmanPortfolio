@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
 
@@ -62,10 +62,16 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const [showMore, setShowMore] = useState(false);
+  
   // Filter to show all sales and related experience (excluding highlighted RBC Academy card)
   const allExperiences = experiences.filter(exp => 
-    (exp.title.includes("Sales") || exp.title.includes("Safety") || exp.title.includes("Retail") || exp.title.includes("Certification")) && !exp.isHighlighted
+    (exp.title.includes("Sales") || exp.title.includes("Safety") || exp.title.includes("Retail") || exp.title.includes("Certification") || exp.title.includes("Food")) && !exp.isHighlighted
   );
+
+  // Show first 4 experiences initially, rest when "View More" is clicked
+  const displayedExperiences = showMore ? allExperiences : allExperiences.slice(0, 4);
+  const hasMore = allExperiences.length > 4;
 
   return (
     <>
@@ -74,48 +80,72 @@ const Experience = () => {
           Professional Background
         </p>
         <h2 className={`${styles.sectionHeadText}`}>
-          Experience - <span className="bg-[#ffd700] text-black px-4 py-2 rounded-lg text-4xl">RBC ACADEMY</span>
+          Experience
         </h2>
       </motion.div>
 
       <div className='mt-12 flex flex-col gap-6'>
-        {allExperiences.map((experience, index) => (
-          <div key={`experience-${index}`} className="bg-[#1a1a1a] border-2 border-[#ffd700]/30 rounded-2xl p-6 hover:border-[#ffd700]/60 transition-all">
-            {experience.isHighlighted ? (
-              <>
-                <div className="mb-4">
-                  <p className='text-gray-400 text-sm mb-4'>{experience.date}</p>
-                </div>
-                <ul className='mt-4 space-y-2'>
-                  {experience.points.map((point, idx) => (
-                    <li key={idx} className='text-gray-300 text-sm flex items-start'>
-                      <span className="text-[#ffd700] mr-2">•</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className='text-white text-xl font-bold'>{experience.title}</h3>
-                    <p className='text-[#ffd700] text-base font-semibold mt-1'>{experience.company_name}</p>
-                    <p className='text-gray-400 text-sm'>{experience.date}</p>
+        <AnimatePresence>
+          {displayedExperiences.map((experience, index) => (
+            <motion.div
+              key={`${experience.company_name}-${experience.title}-${index}`}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20, height: 0, marginBottom: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border-2 border-[#ffd700]/30 rounded-2xl p-6 md:p-8 hover:border-[#ffd700]/60 hover:shadow-xl hover:shadow-[#ffd700]/20 transition-all overflow-hidden"
+            >
+              {experience.isHighlighted ? (
+                <>
+                  <div className="mb-4">
+                    <p className='text-gray-300 text-base mb-4'>{experience.date}</p>
                   </div>
-                </div>
-                <ul className='mt-4 space-y-2'>
-                  {experience.points.map((point, idx) => (
-                    <li key={idx} className='text-gray-300 text-sm flex items-start'>
-                      <span className="text-[#ffd700] mr-2">•</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </div>
-        ))}
+                  <ul className='mt-5 space-y-4'>
+                    {experience.points.map((point, idx) => (
+                      <li key={idx} className='text-white text-lg md:text-xl leading-relaxed flex items-start'>
+                        <span className="text-[#ffd700] mr-4 mt-1.5 font-bold text-xl">•</span>
+                        <span className="flex-1">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-5">
+                    <div className="flex-1">
+                      <h3 className='text-white text-2xl md:text-3xl font-bold mb-2'>{experience.title}</h3>
+                      <p className='text-[#ffd700] text-lg md:text-xl font-semibold mt-1'>{experience.company_name}</p>
+                      <p className='text-gray-300 text-base mt-1'>{experience.date}</p>
+                    </div>
+                  </div>
+                  <ul className='mt-5 space-y-4'>
+                    {experience.points.map((point, idx) => (
+                      <li key={idx} className='text-white text-lg md:text-xl leading-relaxed flex items-start'>
+                        <span className="text-[#ffd700] mr-4 mt-1.5 font-bold text-xl">•</span>
+                        <span className="flex-1">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+        
+        {hasMore && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex justify-center mt-6"
+          >
+            <button
+              onClick={() => setShowMore(!showMore)}
+              className="px-8 py-3 bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black font-bold rounded-xl hover:shadow-lg hover:shadow-[#ffd700]/50 transition-all transform hover:scale-105"
+            >
+              {showMore ? "View Less" : "View More"}
+            </button>
+          </motion.div>
+        )}
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { AiOutlineGithub } from "react-icons/ai";
 import { ImLinkedin } from "react-icons/im";
 import { HiOutlineMail } from "react-icons/hi";
@@ -10,17 +11,22 @@ const Footer = () => {
   return (
     <div className="footer text-center py-8 border-t border-[#ffd700]/20">
       <div className="flex justify-center gap-6 mb-6">
-        <a
-          href="https://github.com"
+        <motion.a
+          href="https://github.com/NehmanDevelops"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#ffd700] hover:text-white transition-colors"
+          className="text-[#ffd700] hover:text-white transition-colors relative group"
           aria-label="GitHub"
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
         >
           <AiOutlineGithub className="text-2xl" />
-        </a>
+          <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            GitHub
+          </span>
+        </motion.a>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/nehman-rahimi-916225258/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#ffd700] hover:text-white transition-colors"

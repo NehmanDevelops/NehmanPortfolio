@@ -185,7 +185,7 @@ const BeyondTheCode = () => {
               </div>
             </motion.div>
 
-            {/* Fashion and Dressing Up */}
+            {/* Fashion */}
             <motion.div
               variants={fadeIn("up", "spring", 0.8, 0.75)}
               className="relative group"
@@ -210,7 +210,7 @@ const BeyondTheCode = () => {
                       <GiTShirt className="text-black text-4xl" />
                     </motion.div>
                     <div className="flex-1">
-                      <h4 className="text-[#ffd700] text-2xl md:text-3xl font-bold mb-2 group-hover:text-[#ffed4e] transition-colors">Fashion and Dressing Up</h4>
+                      <h4 className="text-[#ffd700] text-2xl md:text-3xl font-bold mb-2 group-hover:text-[#ffed4e] transition-colors">Fashion</h4>
                     </div>
                   </div>
                   <p className="text-gray-300 text-base md:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">

@@ -18,7 +18,7 @@ const Resume = () => {
         className={`${styles.paddingX} pb-20 flex justify-center items-center`}
       >
         <motion.a
-          href="/resume.pdf"
+          href="/Nehman_Rahimi.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="resume-button bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black px-12 py-6 rounded-xl font-bold text-xl shadow-lg shadow-[#ffd700]/50 hover:shadow-[#ffd700]/70 transition-all flex items-center gap-3"

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { textVariant, fadeIn } from "../utils/motion";
+import { openai } from "../assets";
 import "./Skills.scss";
 
 const technicalSkills = {
@@ -39,7 +40,7 @@ const technicalSkills = {
   ],
   "Tools & DevOps": [
     { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { name: "GitHub", icon: "https://img.icons8.com/material-rounded/96/ffffff/github.png" },
     { name: "VSCode", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
     { name: "Linux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
     { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
@@ -47,9 +48,9 @@ const technicalSkills = {
   ],
   "Cloud & AI/ML": [
     { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
-    { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+    { name: "AWS", icon: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
     { name: "TensorFlow", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-    { name: "OpenAI API", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg" },
+    { name: "OpenAI API", icon: openai },
   ],
 };
 
@@ -176,7 +177,7 @@ const Skills = () => {
                       <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] border-2 border-[#ffd700]/30 rounded-2xl p-6 flex flex-col items-center justify-center hover:border-[#ffd700]/70 hover:shadow-2xl hover:shadow-[#ffd700]/30 transition-all cursor-pointer">
                         <div className="w-20 h-20 mb-4 flex items-center justify-center">
                           <motion.img
-                            src={skill.icon}
+                            src={typeof skill.icon === 'string' ? skill.icon : (skill.icon?.src || skill.icon?.default?.src || skill.icon)}
                             alt={skill.name}
                             className="w-full h-full object-contain"
                             whileHover={{ scale: 1.2, rotate: 5 }}
