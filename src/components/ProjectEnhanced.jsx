@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useState, useMemo } from "react";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn, textVariant, staggerContainer } from "../utils/motion";
 import { allProjects } from "../constants";
 import { BsFolder, BsFilter } from "react-icons/bs";
 import { AiOutlineGithub } from "react-icons/ai";
@@ -20,222 +20,140 @@ const ProjectCard = ({
   isHackathonWinner,
   teamMembers,
   isVideo,
+  category,
 }) => {
   return (
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.2, 0.75)}
-      className="w-full"
+      variants={fadeIn("up", "spring", index * 0.1, 0.75)}
+      className="h-full"
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.3 }}
     >
-      <div className="bg-[#1a1a1a] border-2 border-[#ffd700]/30 rounded-2xl p-8 hover:border-[#ffd700]/60 hover:shadow-lg hover:shadow-[#ffd700]/20 transition-all">
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left: Image or Video */}
-          {image && (
-            <div className={`${name === "NehmanBot" ? "lg:w-1/4" : "lg:w-1/3"} flex-shrink-0`}>
-              <div className={`relative w-full ${name === "NehmanBot" ? "h-48" : "h-64"} rounded-xl overflow-hidden border-2 border-[#ffd700]/20 bg-[#0a0a0a]`}>
-                {isVideo || (typeof image === 'string' && (image.endsWith('.mp4') || image.endsWith('.webm') || image.endsWith('.mov'))) || (image?.src && typeof image.src === 'string' && (image.src.endsWith('.mp4') || image.src.endsWith('.webm') || image.src.endsWith('.mov'))) ? (
-                  <video
-                    src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image)}
-                    className={`w-full h-full ${name === "NehmanBot" ? "object-contain" : "object-cover"}`}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    style={{ display: 'block' }}
-                    onError={(e) => {
-                      console.error('Video failed to load for', name, ':', image, typeof image);
-                      e.target.style.background = '#ffd700';
-                      e.target.style.display = 'flex';
-                      e.target.style.alignItems = 'center';
-                      e.target.style.justifyContent = 'center';
-                    }}
-                  />
-                ) : (
-                  <img
-                    src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image)}
-                    alt={name}
-                    className={`w-full h-full ${name === "NehmanBot" ? "object-contain" : "object-cover"}`}
-                    style={{ display: 'block' }}
-                    onError={(e) => {
-                      console.error('Image failed to load for', name, ':', image, typeof image);
-                      console.error('Trying to use:', typeof image === 'string' ? image : (image?.src || image?.default?.src || image));
-                      e.target.style.background = '#ffd700';
-                      e.target.style.display = 'flex';
-                      e.target.style.alignItems = 'center';
-                      e.target.style.justifyContent = 'center';
-                    }}
-                    onLoad={() => {
-                      console.log('Image loaded successfully for', name);
-                    }}
-                  />
-                )}
+      <div className="relative h-full bg-gradient-to-br from-[#1f1f1f] to-[#1a1a1a] border-2 border-[#ffd700]/40 rounded-3xl overflow-hidden hover:border-[#ffd700] hover:shadow-2xl hover:shadow-[#ffd700]/40 transition-all group flex flex-col">
+        {/* Background glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ffd700]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        {/* Image/Video Section */}
+        {image && (
+          <div className="relative w-full h-64 overflow-hidden bg-[#0a0a0a]">
+            {isVideo || (typeof image === 'string' && (image.endsWith('.mp4') || image.endsWith('.webm') || image.endsWith('.mov'))) || (image?.src && typeof image.src === 'string' && (image.src.endsWith('.mp4') || image.src.endsWith('.webm') || image.src.endsWith('.mov'))) ? (
+              <video
+                src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image)}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                autoPlay
+                loop
+                muted
+                playsInline
+                onError={(e) => {
+                  e.target.style.background = '#1a1a1a';
+                }}
+              />
+            ) : (
+              <img
+                src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image)}
+                alt={name}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {
+                  e.target.style.background = '#1a1a1a';
+                }}
+              />
+            )}
+            
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent"></div>
+            
+            {/* Category Badge */}
+            {category && (
+              <div className="absolute top-4 right-4">
+                <span className="px-3 py-1.5 bg-[#ffd700] text-black text-xs font-bold rounded-full uppercase">
+                  {category === "fullstack" ? "Full Stack" : category === "coming-soon" ? "Coming Soon" : category}
+                </span>
               </div>
-            </div>
-          )}
-
-          {/* Right: Content */}
-          <div className="flex-1">
+            )}
+            
             {/* Hackathon Winner Badge */}
             {isHackathonWinner && (
-              <div className="mb-4">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ffd700] to-[#ffed4e] rounded-full shadow-lg shadow-[#ffd700]/50 animate-pulse">
-                  <span className="text-2xl">🏆</span>
-                  <span className="text-black font-bold text-sm md:text-base">1ST PLACE HACKATHON WINNER</span>
-                </div>
-              </div>
-            )}
-            
-            {/* Title and Links */}
-            <div className="flex items-start justify-between mb-4">
-              <h3 className="text-white font-bold text-2xl lg:text-3xl">{name}</h3>
-              <div className="flex gap-3">
-                {source_link && source_link !== "#" && source_link.trim() !== "" && (
-                  <motion.a
-                    href={source_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#ffd700]/20 border-2 border-[#ffd700] flex justify-center items-center cursor-pointer hover:bg-[#ffd700] transition-colors group"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    title="Live Demo"
-                  >
-                    <HiOutlineExternalLink className="w-5 h-5 text-[#ffd700] group-hover:text-black transition-colors" />
-                  </motion.a>
-                )}
-                {source_code_link && source_code_link !== "#" && source_code_link.trim() !== "" && (
-                  <motion.a
-                    href={source_code_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#ffd700]/20 border-2 border-[#ffd700] flex justify-center items-center cursor-pointer hover:bg-[#ffd700] transition-colors group"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    title="GitHub"
-                  >
-                    <AiOutlineGithub className="w-5 h-5 text-[#ffd700] group-hover:text-black transition-colors" />
-                  </motion.a>
-                )}
-              </div>
-            </div>
-
-            {/* Description */}
-            <p className="text-gray-300 text-base lg:text-lg mb-6 leading-relaxed">
-              {description}
-            </p>
-
-            {/* Tech Stack Badges */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              {tags.map((tag) => (
-                <span
-                  key={`${name}-${tag.name}`}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium ${tag.color} bg-[#ffd700]/10 border border-[#ffd700]/30`}
+              <div className="absolute top-4 left-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#ffd700] to-[#ffed4e] rounded-full shadow-lg shadow-[#ffd700]/50"
                 >
-                  {tag.name}
-                </span>
-              ))}
-            </div>
-
-            {/* Team Members */}
-            {teamMembers && teamMembers.length > 0 && (
-              <div className="mb-4">
-                <p className="text-gray-400 text-sm mb-1">
-                  <span className="text-[#ffd700] font-semibold">Team:</span> {teamMembers.join(", ")}
-                </p>
-              </div>
-            )}
-
-            {/* Key Features - Only show for projects that need it */}
-            {name === "PinPoint" && (
-              <div className="space-y-2">
-                <h4 className="text-[#ffd700] font-semibold text-lg mb-2">Key Features:</h4>
-                <ul className="space-y-1 text-gray-400 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>Cheap Grocery Finder - Scans stores within 500km for lowest prices</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>Price Matcher with QR code generation for proof at checkout</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>GrocyBot AI assistant for food-related questions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>DAPR dynamic recipe system that adapts to local price changes</span>
-                  </li>
-                </ul>
-              </div>
-            )}
-            
-            {/* Key Features for PricePatrol */}
-            {name === "PricePatrol" && (
-              <div className="space-y-2 mt-4">
-                <h4 className="text-[#ffd700] font-semibold text-lg mb-2">Key Features:</h4>
-                <ul className="space-y-1 text-gray-400 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>Interactive map showing local grocery stores with color-coded price indicators</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>User accounts and personalized favorite items tracking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>Google Maps integration for directions to stores</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>Displays cheapest and most expensive prices with savings calculations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-[#ffd700] mr-2">•</span>
-                    <span>Saves user-visited stores for personalized recommendations</span>
-                  </li>
-                </ul>
-              </div>
-            )}
-            
-            {/* Key Features for NehmanBot */}
-            {name === "NehmanBot" && (
-              <div className="space-y-2 mt-4">
-                <h4 className="text-[#ffd700] font-semibold text-lg mb-2">Key Features:</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <h5 className="text-[#ffd700] font-medium text-sm mb-2">🛠 Moderation</h5>
-                    <ul className="space-y-1 text-gray-400 text-xs">
-                      <li>• Kick, ban, purge, timeout, and mute commands</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5 className="text-[#ffd700] font-medium text-sm mb-2">📊 Statistics</h5>
-                    <ul className="space-y-1 text-gray-400 text-xs">
-                      <li>• Member count and active member tracking</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5 className="text-[#ffd700] font-medium text-sm mb-2">🎵 Music</h5>
-                    <ul className="space-y-1 text-gray-400 text-xs">
-                      <li>• YouTube music playback with play/pause/resume/stop</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5 className="text-[#ffd700] font-medium text-sm mb-2">🎮 Games & Fun</h5>
-                    <ul className="space-y-1 text-gray-400 text-xs">
-                      <li>• Tic-Tac-Toe, dice rolling, poll creation</li>
-                      <li>• AI poem generation</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="mt-3 pt-3 border-t border-[#ffd700]/20">
-                  <p className="text-gray-400 text-xs">
-                    <span className="text-[#ffd700] font-semibold">Hosting:</span> Runs 24/7 on Heroku cloud platform
-                  </p>
-                </div>
+                  <span className="text-xl">🏆</span>
+                  <span className="text-black font-bold text-xs">HACKATHON WINNER</span>
+                </motion.div>
               </div>
             )}
           </div>
+        )}
+
+        {/* Content Section */}
+        <div className="relative z-10 flex flex-col flex-1 p-6 bg-gradient-to-b from-[#1f1f1f] to-[#1a1a1a]">
+          {/* Title */}
+          <div className="flex items-start justify-between mb-3">
+            <h3 className="text-white font-bold text-xl lg:text-2xl group-hover:text-[#ffd700] transition-colors flex-1 pr-2">
+              {name}
+            </h3>
+            <div className="flex gap-2 flex-shrink-0">
+              {source_link && source_link !== "#" && source_link.trim() !== "" && (
+                <motion.a
+                  href={source_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#ffd700]/20 border border-[#ffd700] flex justify-center items-center cursor-pointer hover:bg-[#ffd700] transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  title="Live Demo"
+                >
+                  <HiOutlineExternalLink className="w-4 h-4 text-[#ffd700] group-hover:text-black transition-colors" />
+                </motion.a>
+              )}
+              {source_code_link && source_code_link !== "#" && source_code_link.trim() !== "" && (
+                <motion.a
+                  href={source_code_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-[#ffd700]/20 border border-[#ffd700] flex justify-center items-center cursor-pointer hover:bg-[#ffd700] transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  title="GitHub"
+                >
+                  <AiOutlineGithub className="w-4 h-4 text-[#ffd700] group-hover:text-black transition-colors" />
+                </motion.a>
+              )}
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-200 text-sm leading-relaxed mb-4 line-clamp-3 group-hover:text-white transition-colors flex-1">
+            {description}
+          </p>
+
+          {/* Tech Stack Badges */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {tags.slice(0, 4).map((tag) => (
+              <span
+                key={`${name}-${tag.name}`}
+                className="px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-[#ffd700]/30 border-2 border-[#ffd700]/60 hover:border-[#ffd700] hover:bg-[#ffd700]/40 transition-all shadow-sm shadow-[#ffd700]/20"
+              >
+                {tag.name}
+              </span>
+            ))}
+            {tags.length > 4 && (
+              <span className="px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-300 bg-[#2a2a2a] border-2 border-gray-600">
+                +{tags.length - 4} more
+              </span>
+            )}
+          </div>
+
+          {/* Team Members */}
+          {teamMembers && teamMembers.length > 0 && (
+            <div className="mt-auto pt-3 border-t border-[#ffd700]/20">
+              <p className="text-gray-400 text-xs">
+                <span className="text-[#ffd700] font-semibold">Team:</span> {teamMembers.join(", ")}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
@@ -256,14 +174,15 @@ const ProjectEnhanced = () => {
   const filteredProjects = useMemo(() => {
     if (selected === "all") {
       // Show every project (including backend/frontend/fullstack); keep order from constants
-      return allProjects;
+      const projects = allProjects.filter(p => p && p.name);
+      return projects;
     }
 
     if (selected === "coming-soon") {
-      return allProjects.filter((p) => p.category === "coming-soon");
+      return allProjects.filter((p) => p && p.name && p.category === "coming-soon");
     }
 
-    return allProjects.filter((p) => p.category === selected);
+    return allProjects.filter((p) => p && p.name && p.category === selected);
   }, [selected]);
 
   return (
@@ -271,10 +190,8 @@ const ProjectEnhanced = () => {
       <motion.div variants={textVariant()} className="mb-12">
         <p className={styles.sectionSubText}>My Work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
-        <p className={`${styles.sectionSubText} mt-4 max-w-4xl text-gray-400`}>
-          Here are my featured projects showcasing full-stack development skills, problem-solving abilities, 
-          and attention to user experience. Each project includes live demos, GitHub repositories, and 
-          detailed documentation of the tech stack and challenges overcome.
+        <p className={`${styles.sectionSubText} mt-4 max-w-4xl text-gray-400 text-base`}>
+          A collection of my work demonstrating technical expertise and creative problem-solving.
         </p>
       </motion.div>
 
@@ -332,15 +249,29 @@ const ProjectEnhanced = () => {
           </div>
         </div>
       ) : (
-        <div className="space-y-12">
-          {filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={`project-${index}`}
-              index={index}
-              {...project}
-            />
-          ))}
-        </div>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={staggerContainer(0.1, 0.1)}
+          initial="hidden"
+          animate="show"
+        >
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project, index) => {
+              if (!project || !project.name) return null;
+              return (
+                <ProjectCard
+                  key={`project-${project.name}-${index}-${selected}`}
+                  index={index}
+                  {...project}
+                />
+              );
+            })
+          ) : (
+            <div className="col-span-full text-center py-20">
+              <p className="text-gray-400 text-xl">No projects found in this category.</p>
+            </div>
+          )}
+        </motion.div>
       )}
     </div>
   );

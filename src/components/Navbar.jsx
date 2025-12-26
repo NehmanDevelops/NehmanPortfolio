@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { logo} from "../assets";
@@ -36,42 +35,51 @@ const Navbar = () => {
         <div></div>
 
         <div className='sm:flex gap-6 items-center'>
-          <Link
-            to='/#about'
+          <a
+            href='/#about'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${
               active === "about" ? "text-[#ffd700]" : "text-gray-400"
             } hover:text-[#ffd700]`}
             onClick={() => setActive("about")}
           >
             About
-          </Link>
-          <Link
-            to='/#education'
+          </a>
+          <a
+            href='/#education'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${
               active === "education" ? "text-[#ffd700]" : "text-gray-400"
             } hover:text-[#ffd700]`}
             onClick={() => setActive("education")}
           >
             Education
-          </Link>
-          <Link
-            to='/#project'
+          </a>
+          <a
+            href='/#project'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${
               active === "project" ? "text-[#ffd700]" : "text-gray-400"
             } hover:text-[#ffd700]`}
             onClick={() => setActive("project")}
           >
             Projects
-          </Link>
-          <Link
-            to='/#skills'
+          </a>
+          <a
+            href='/#skills'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${
               active === "skills" ? "text-[#ffd700]" : "text-gray-400"
             } hover:text-[#ffd700]`}
             onClick={() => setActive("skills")}
           >
             Skills
-          </Link>
+          </a>
+          <a
+            href='/#contact'
+            className={`text-[15px] font-medium cursor-pointer transition-colors ${
+              active === "contact" ? "text-[#ffd700]" : "text-gray-400"
+            } hover:text-[#ffd700]`}
+            onClick={() => setActive("contact")}
+          >
+            Contact
+          </a>
           <a
             href="https://drive.google.com/drive/folders/13YGuvdkXQdyFzfuJd3YdUaG99dhCPz22?pli=1"
             target="_blank"

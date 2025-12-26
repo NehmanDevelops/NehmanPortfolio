@@ -1,6 +1,5 @@
 'use client'
 
-import { BrowserRouter } from 'react-router-dom'
 import dynamic from 'next/dynamic'
 import HeroIntro from './HeroIntro'
 
@@ -21,27 +20,25 @@ const StarsCanvas = dynamic(() => import('../src/components/canvas/Stars'), { ss
 
 export default function OriginalPortfolio() {
   return (
-    <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        {/* Hero Intro Section - First thing that appears */}
-        <HeroIntro />
-        
-        {/* Rest of the portfolio */}
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          <Navbar />
-        </div>
-        <About />
-        <BeyondTheCode />
-        <Education />
-        <Skills />
-        <Project />
-        <Experience />
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
-        </div>
-        <Footer />
+    <div className='relative z-0 bg-primary'>
+      {/* Hero Intro Section - First thing that appears */}
+      <HeroIntro />
+      
+      {/* Rest of the portfolio */}
+      <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        <Navbar />
       </div>
-    </BrowserRouter>
+      <About />
+      <Education />
+      <BeyondTheCode />
+      <Skills />
+      <Project />
+      <Experience />
+      <div className='relative z-0'>
+        <Contact />
+        <StarsCanvas />
+      </div>
+      <Footer />
+    </div>
   )
 }

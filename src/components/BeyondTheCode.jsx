@@ -8,8 +8,14 @@ import { textVariant, fadeIn } from "../utils/motion";
 
 const BeyondTheCode = () => {
   return (
-    <div className={`w-full bg-black relative z-10 ${styles.padding}`}>
-      <motion.div variants={textVariant()} initial="hidden" animate="show" className="mb-8">
+    <div className={`w-full bg-black relative z-10 -mt-8 ${styles.padding} overflow-hidden`}>
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#ffd700] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#ffd700] rounded-full blur-3xl"></div>
+      </div>
+
+      <motion.div variants={textVariant()} initial="hidden" animate="show" className="mb-16 relative z-10">
         <p className={styles.sectionSubText}>Personal Interests</p>
         <h2 className={styles.sectionHeadText}>Beyond the Code.</h2>
       </motion.div>
@@ -18,73 +24,200 @@ const BeyondTheCode = () => {
         variants={fadeIn("up", "spring", 0.5, 0.75)}
         initial="hidden"
         animate="show"
-        className="w-full"
+        className="w-full relative z-10"
       >
-        <div className='bg-[#1a1a1a] rounded-3xl p-10 md:p-12 w-full max-w-6xl mx-auto border-2 border-[#ffd700]/30'>
-          <motion.div variants={textVariant()} className="mb-10 text-center">
-            <p className="text-gray-400 text-base md:text-lg">The passions and interests that fuel my creativity and drive</p>
+        <div className='relative w-full max-w-7xl mx-auto'>
+          {/* Hero Image/Visual Element */}
+          <motion.div 
+            variants={fadeIn("up", "spring", 0.3, 0.75)}
+            className="mb-12 flex justify-center"
+          >
+            <div className="relative w-full max-w-4xl h-48 md:h-64 rounded-3xl overflow-hidden border-2 border-[#ffd700]/30">
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#ffd700]/20 via-[#ffd700]/10 to-[#ffd700]/20"></div>
+              
+              {/* Animated pattern background */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 left-0 w-full h-full" style={{
+                  backgroundImage: `repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 215, 0, 0.1) 10px,
+                    rgba(255, 215, 0, 0.1) 20px
+                  )`
+                }}></div>
+              </div>
+              
+              {/* Content overlay */}
+              <div className="relative z-10 h-full flex items-center justify-center">
+                <div className="text-center px-8">
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.1, 1],
+                      opacity: [0.8, 1, 0.8]
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="inline-block"
+                  >
+                    <div className="flex items-center gap-4 justify-center mb-4">
+                      <GiWeightLiftingUp className="text-[#ffd700] text-4xl md:text-5xl" />
+                      <GiFruitBowl className="text-[#ffd700] text-4xl md:text-5xl" />
+                      <FaGamepad className="text-[#ffd700] text-4xl md:text-5xl" />
+                      <GiTShirt className="text-[#ffd700] text-4xl md:text-5xl" />
+                    </div>
+                  </motion.div>
+                  <p className="text-white text-xl md:text-2xl font-medium">The passions and interests that fuel my creativity and drive</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
           
-          {/* Interest Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+          {/* Interest Cards - 2x2 Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-6xl mx-auto">
             {/* Weightlifting */}
             <motion.div
               variants={fadeIn("up", "spring", 0.2, 0.75)}
-              className="bg-[#1a1a1a] border-2 border-[#ffd700]/30 rounded-2xl p-6 md:p-8 text-center hover:border-[#ffd700]/60 hover:shadow-lg hover:shadow-[#ffd700]/20 transition-all cursor-pointer group"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="relative group"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="flex justify-center mb-5">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#ffd700]/20 to-[#ffd700]/10 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#ffd700]/30 group-hover:to-[#ffd700]/20 transition-all">
-                  <GiWeightLiftingUp className="text-[#ffd700] text-3xl" />
+              <div className="relative bg-[#1a1a1a] rounded-3xl p-8 md:p-10 border border-[#ffd700]/20 hover:border-[#ffd700]/50 transition-all duration-300 overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffd700] rounded-full blur-3xl"></div>
+                </div>
+                
+                {/* Background gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ffd700]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-start gap-6 mb-6">
+                    <motion.div 
+                      className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-[#ffd700] to-[#ffed4e] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffd700]/30"
+                      whileHover={{ scale: 1.15, rotate: 10 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <GiWeightLiftingUp className="text-black text-4xl" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h4 className="text-[#ffd700] text-2xl md:text-3xl font-bold mb-2 group-hover:text-[#ffed4e] transition-colors">Weightlifting</h4>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-base md:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">
+                    I love weightlifting, regularly hitting the gym, and building strength. The discipline of consistent progress keeps me focused and motivated in everything I do.
+                  </p>
                 </div>
               </div>
-              <h4 className="text-[#ffd700] text-xl font-bold mb-3">Weightlifting</h4>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">I love going to the gym and hitting PRs</p>
             </motion.div>
 
             {/* Eating Healthy */}
             <motion.div
               variants={fadeIn("up", "spring", 0.4, 0.75)}
-              className="bg-[#1a1a1a] border-2 border-[#ffd700]/30 rounded-2xl p-6 md:p-8 text-center hover:border-[#ffd700]/60 hover:shadow-lg hover:shadow-[#ffd700]/20 transition-all cursor-pointer group"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="relative group"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="flex justify-center mb-5">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#ffd700]/20 to-[#ffd700]/10 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#ffd700]/30 group-hover:to-[#ffd700]/20 transition-all">
-                  <GiFruitBowl className="text-[#ffd700] text-3xl" />
+              <div className="relative bg-[#1a1a1a] rounded-3xl p-8 md:p-10 border border-[#ffd700]/20 hover:border-[#ffd700]/50 transition-all duration-300 overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#ffd700] rounded-full blur-3xl"></div>
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ffd700]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-start gap-6 mb-6">
+                    <motion.div 
+                      className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-[#ffd700] to-[#ffed4e] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffd700]/30"
+                      whileHover={{ scale: 1.15, rotate: -10 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <GiFruitBowl className="text-black text-4xl" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h4 className="text-[#ffd700] text-2xl md:text-3xl font-bold mb-2 group-hover:text-[#ffed4e] transition-colors">Eating Healthy</h4>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-base md:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">
+                    I enjoy cooking and eating clean, meal prepping to hit my protein goals and stay energized.
+                  </p>
                 </div>
               </div>
-              <h4 className="text-[#ffd700] text-xl font-bold mb-3">Eating Healthy</h4>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">I eat healthy, cook my own meals, and consistently hit my protein goals</p>
             </motion.div>
 
             {/* Video Games */}
             <motion.div
               variants={fadeIn("up", "spring", 0.6, 0.75)}
-              className="bg-[#1a1a1a] border-2 border-[#ffd700]/30 rounded-2xl p-6 md:p-8 text-center hover:border-[#ffd700]/60 hover:shadow-lg hover:shadow-[#ffd700]/20 transition-all cursor-pointer group"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="relative group"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="flex justify-center mb-5">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#ffd700]/20 to-[#ffd700]/10 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#ffd700]/30 group-hover:to-[#ffd700]/20 transition-all">
-                  <FaGamepad className="text-[#ffd700] text-3xl" />
+              <div className="relative bg-[#1a1a1a] rounded-3xl p-8 md:p-10 border border-[#ffd700]/20 hover:border-[#ffd700]/50 transition-all duration-300 overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-0 left-0 w-32 h-32 bg-[#ffd700] rounded-full blur-3xl"></div>
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ffd700]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-start gap-6 mb-6">
+                    <motion.div 
+                      className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-[#ffd700] to-[#ffed4e] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffd700]/30"
+                      whileHover={{ scale: 1.15, rotate: 10 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <FaGamepad className="text-black text-4xl" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h4 className="text-[#ffd700] text-2xl md:text-3xl font-bold mb-2 group-hover:text-[#ffed4e] transition-colors">Video Games</h4>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-base md:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">
+                    Gaming has been a passion since I was a kid. It sparked my curiosity about how things work behind the scenes and played a big role in getting me into programming.
+                  </p>
                 </div>
               </div>
-              <h4 className="text-[#ffd700] text-xl font-bold mb-3">Video Games</h4>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">I loved games growing up, which motivated me to learn how to code and pursue computer science</p>
             </motion.div>
 
             {/* Fashion and Dressing Up */}
             <motion.div
               variants={fadeIn("up", "spring", 0.8, 0.75)}
-              className="bg-[#1a1a1a] border-2 border-[#ffd700]/30 rounded-2xl p-6 md:p-8 text-center hover:border-[#ffd700]/60 hover:shadow-lg hover:shadow-[#ffd700]/20 transition-all cursor-pointer group"
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="relative group"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="flex justify-center mb-5">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#ffd700]/20 to-[#ffd700]/10 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#ffd700]/30 group-hover:to-[#ffd700]/20 transition-all">
-                  <GiTShirt className="text-[#ffd700] text-3xl" />
+              <div className="relative bg-[#1a1a1a] rounded-3xl p-8 md:p-10 border border-[#ffd700]/20 hover:border-[#ffd700]/50 transition-all duration-300 overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#ffd700] rounded-full blur-3xl"></div>
+                </div>
+                
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ffd700]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-start gap-6 mb-6">
+                    <motion.div 
+                      className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-[#ffd700] to-[#ffed4e] rounded-2xl flex items-center justify-center shadow-lg shadow-[#ffd700]/30"
+                      whileHover={{ scale: 1.15, rotate: -10 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <GiTShirt className="text-black text-4xl" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h4 className="text-[#ffd700] text-2xl md:text-3xl font-bold mb-2 group-hover:text-[#ffed4e] transition-colors">Fashion and Dressing Up</h4>
+                    </div>
+                  </div>
+                  <p className="text-gray-300 text-base md:text-lg leading-relaxed group-hover:text-gray-200 transition-colors">
+                    I like expressing myself through style, putting together clean, thoughtful outfits. It's a fun creative outlet and a reminder that details matter, on and off the screen.
+                  </p>
                 </div>
               </div>
-              <h4 className="text-[#ffd700] text-xl font-bold mb-3">Fashion and Dressing Up</h4>
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">I enjoy expressing myself through fashion and putting together stylish outfits</p>
             </motion.div>
           </div>
         </div>

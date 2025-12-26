@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { AiOutlineGithub } from 'react-icons/ai'
 import { ImLinkedin } from 'react-icons/im'
-import { HiOutlineMail } from 'react-icons/hi'
+import { HiOutlineMail, HiOutlineDocumentText } from 'react-icons/hi'
 import { profilePhoto } from '../src/assets'
 
 export default function HeroIntro() {
@@ -121,7 +121,7 @@ export default function HeroIntro() {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
           >
-            Second year York University Computer Science student transitioning from sales-oriented roles.
+            Second-Year York University Computer Science student transitioning from sales-oriented roles.
           </motion.p>
 
           {/* Social Media Icons */}
@@ -132,7 +132,7 @@ export default function HeroIntro() {
             className="flex gap-4 pt-4 justify-center md:justify-start"
           >
             <motion.a
-              href="https://github.com" 
+              href="https://github.com/NehmanDevelops" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
@@ -142,7 +142,7 @@ export default function HeroIntro() {
               <AiOutlineGithub className="text-xl" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/nehman-rahimi-916225258/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
@@ -158,6 +158,18 @@ export default function HeroIntro() {
               whileTap={{ scale: 0.9 }}
             >
               <HiOutlineMail className="text-xl" />
+            </motion.a>
+            <motion.a
+              href="https://drive.google.com/drive/folders/13YGuvdkXQdyFzfuJd3YdUaG99dhCPz22?pli=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300 gap-2"
+              whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255, 215, 0, 0.5)' }}
+              whileTap={{ scale: 0.95 }}
+              title="See Resume"
+            >
+              <span>See Resume</span>
+              <HiOutlineDocumentText className="text-xl" />
             </motion.a>
           </motion.div>
         </motion.div>

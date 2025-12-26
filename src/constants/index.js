@@ -723,7 +723,7 @@ import {
       stream: "Software Development Stream",
       name: "York University, Lassonde School of Engineering",
       location: "Toronto, Ontario, Canada",
-      graduationYear: "2027",
+      graduationYear: "2028",
       currentYear: "Second Year",
       image: clg,
     },
@@ -750,7 +750,7 @@ import {
       source_code_link: "https://github.com/NehmanDevelops/pinpoint",
     }, "fullstack"),
     ...webProject
-      .filter(p => p.name === "PricePatrol" || p.name === "NehmanBot")
+      .filter(p => p.name === "PricePatrol")
       .map(p => categorizeProject(p, "fullstack")),
     
     // Frontend Projects - frontend-only projects
@@ -770,15 +770,25 @@ import {
       isVideo: true,
     }, "frontend"),
     ...webProject
-      .filter(p => p.name === "3D React Portfolio" || p.name === "30 Days of JavaScript" || p.name === "Notes Application")
-      .map(p => categorizeProject(p, "frontend")),
+      .filter(p => p.name === "3D React Portfolio")
+      .map(p => {
+        const portfolioProject = { ...p };
+        portfolioProject.name = "NehmanPortfolio";
+        portfolioProject.description = "A stunning, highly interactive personal portfolio website showcasing dual expertise in software development and sales. Built with Next.js 14 and React, featuring a dramatic split-screen design with immersive animations, 3D graphics, and personality-based navigation. The portfolio includes sections for About Me, Beyond the Code, Education, Projects, Skills, and Experience with a modern, responsive design.";
+        portfolioProject.tags = [
+          { name: "Next.js", color: "blue-text-gradient" },
+          { name: "React", color: "green-text-gradient" },
+          { name: "Tailwind CSS", color: "pink-text-gradient" },
+          { name: "Framer Motion", color: "blue-text-gradient" },
+          { name: "Three.js", color: "green-text-gradient" },
+        ];
+        portfolioProject.image = "/nehmanportfolio.png";
+        portfolioProject.source_link = "https://github.com/NehmanDevelops/NehmanPortfolio";
+        portfolioProject.source_code_link = "https://github.com/NehmanDevelops/NehmanPortfolio";
+        return categorizeProject(portfolioProject, "frontend");
+      }),
     
     // Backend Projects - backend-focused projects
-    ...javaProject.map(p => categorizeProject(p, "backend")),
-    ...cProject.map(p => categorizeProject(p, "backend")),
-    ...otherProject
-      .filter(p => p.name === "DBMS Lab" || p.name === "SQL : Library Management System" || p.name === "Multilingual Multiple Choice Question Generation")
-      .map(p => categorizeProject(p, "backend")),
     categorizeProject({
       name: "NehmanBot",
       description: "NehmanBot is a powerful Discord bot designed to enhance servers with fun, utility, and moderation features. The bot runs 24/7 on Heroku cloud hosting, ensuring seamless performance without manual intervention. Features include moderation commands (kick, ban, purge, timeout, mute), statistics tracking, poll creation, music playback from YouTube, interactive games (Tic-Tac-Toe, dice rolling), and AI-powered poem generation.",
@@ -789,34 +799,10 @@ import {
         { name: "Bot Development", color: "blue-text-gradient" },
         { name: "Cloud Hosting", color: "green-text-gradient" },
       ],
-      image: port_3d, // Placeholder - can be updated with actual bot image
+      image: nehmanbot,
       source_link: "https://discord.com/oauth2/authorize?client_id=1318508506567147560&permissions=8&integration_type=0&scope=bot",
       source_code_link: "https://github.com/NehmanDevelops/Nehman-Bot",
     }, "backend"),
-    
-    // Coming Soon/Blog Projects
-    categorizeProject({
-      name: "Tech Blog",
-      description: "Coming soon: A personal blog sharing insights on software development, best practices, and tech trends.",
-      tags: [
-        { name: "blog", color: "blue-text-gradient" },
-        { name: "coming-soon", color: "green-text-gradient" },
-      ],
-      image: port_3d, // Placeholder image
-      source_link: "#",
-      source_code_link: "#",
-    }, "coming-soon"),
-    categorizeProject({
-      name: "AI Project",
-      description: "Coming soon: An exciting AI-powered application that will revolutionize how we interact with technology.",
-      tags: [
-        { name: "AI", color: "blue-text-gradient" },
-        { name: "coming-soon", color: "green-text-gradient" },
-      ],
-      image: port_3d, // Placeholder image
-      source_link: "#",
-      source_code_link: "#",
-    }, "coming-soon"),
   ];
 
   export { list, profiles, technologies, experiences, educations, achievements, allProjects };
