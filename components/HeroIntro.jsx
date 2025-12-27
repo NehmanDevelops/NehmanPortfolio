@@ -30,7 +30,7 @@ export default function HeroIntro() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-visible"
+              className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-visible"
             >
               {/* Gold Gradient Border Ring */}
               <div 
@@ -87,7 +87,7 @@ export default function HeroIntro() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            <p className="text-2xl md:text-3xl text-white mb-4">
+            <p className="text-xl sm:text-2xl md:text-3xl text-white mb-3 sm:mb-4">
               Hi there! <span className="text-software-gold">👋</span>
             </p>
           </motion.div>
@@ -97,7 +97,7 @@ export default function HeroIntro() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
           >
             <span className="bg-gradient-to-r from-white via-software-gold to-white bg-clip-text text-transparent">
               Nehman Rahimi
@@ -109,7 +109,7 @@ export default function HeroIntro() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="text-xl md:text-2xl lg:text-3xl text-software-gold font-medium"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-software-gold font-medium"
           >
             Computer Science Student, AI & Full Stack Developer
           </motion.p>
@@ -119,7 +119,7 @@ export default function HeroIntro() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl leading-relaxed px-2 sm:px-0"
           >
             Second-Year Computer Science Student at York University | Full-Stack Developer with Sales & Customer Experience
           </motion.p>
@@ -129,13 +129,13 @@ export default function HeroIntro() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.6 }}
-            className="flex gap-4 pt-4 justify-center md:justify-start"
+            className="flex flex-wrap gap-3 sm:gap-4 pt-4 justify-center md:justify-start"
           >
             <motion.a
               href="https://github.com/NehmanDevelops" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(255, 215, 0, 0.5)' }}
               whileTap={{ scale: 0.9 }}
             >
@@ -145,7 +145,7 @@ export default function HeroIntro() {
               href="https://www.linkedin.com/in/nehman-rahimi-916225258/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(255, 215, 0, 0.5)' }}
               whileTap={{ scale: 0.9 }}
             >
@@ -153,7 +153,7 @@ export default function HeroIntro() {
             </motion.a>
             <motion.a
               href="mailto:nehmanmain@gmail.com" 
-              className="w-12 h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.1, boxShadow: '0 0 15px rgba(255, 215, 0, 0.5)' }}
               whileTap={{ scale: 0.9 }}
             >
@@ -163,7 +163,7 @@ export default function HeroIntro() {
               href="/Nehman_Rahimi.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300 gap-2"
+              className="px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300 gap-2 text-sm sm:text-base"
               whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255, 215, 0, 0.5)' }}
               whileTap={{ scale: 0.95 }}
               title="See Resume"
@@ -180,7 +180,7 @@ export default function HeroIntro() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-30'
+        className='absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-30'
       >
         <motion.a 
           href='#about'
@@ -198,7 +198,7 @@ export default function HeroIntro() {
               ease: "easeInOut"
             }}
           >
-            <HiArrowDown className='text-3xl md:text-4xl' />
+            <HiArrowDown className='text-2xl sm:text-3xl md:text-4xl' />
           </motion.div>
         </motion.a>
       </motion.div>
