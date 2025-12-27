@@ -8,10 +8,8 @@ import "./About.scss";
 
 const About = () => {
   return (
-    <div className={`mt-2 bg-black relative z-10`}>
-      <div
-        className={`bg-black md:rounded-2xl ${styles.padding} min-h-[100px] md:min-h-[200px] relative z-20`}
-      >
+    <div className={`pt-24 md:pt-32 bg-black relative z-10`}>
+      <div className={`${styles.paddingX} relative z-20 mb-6 md:mb-8`}>
         <motion.div variants={textVariant()} initial="hidden" animate="show" className="text-center md:text-left">
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>About Me.</h2>
@@ -22,7 +20,7 @@ const About = () => {
         variants={fadeIn("up", "spring", 0.5, 0.75)}
         initial="hidden"
         animate="show"
-        className={`mt-4 md:-mt-20 justify-center pb-6 sm:pb-8 md:pb-12 ${styles.paddingX} relative z-10`}
+        className={`justify-center pb-6 sm:pb-8 md:pb-12 ${styles.paddingX} relative z-10`}
       >
           <div className='about-card bg-[#1a1a1a] rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 xl:p-16 w-full max-w-6xl mx-auto border-2 border-[#ffd700]/30 hover:border-[#ffd700]/50 transition-all shadow-lg shadow-[#ffd700]/10'>
           <div className='flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start'>

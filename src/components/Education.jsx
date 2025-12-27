@@ -121,10 +121,8 @@ const EducationCard = ({
 
 const Education = () => {
   return (
-    <div className={`-mt-16 bg-black relative z-10`}>
-      <div
-        className={`bg-black md:rounded-2xl ${styles.padding} min-h-[100px] md:min-h-[200px] relative z-20`}
-      >
+    <div className={`pt-24 md:pt-32 bg-black relative z-10`}>
+      <div className={`${styles.paddingX} relative z-20 mb-6 md:mb-8`}>
         <motion.div variants={textVariant()} initial="hidden" animate="show" className="text-center md:text-left">
           <p className={styles.sectionSubText}>My Academic Journey</p>
           <h2 className={styles.sectionHeadText}>Education.</h2>
@@ -134,7 +132,7 @@ const Education = () => {
         variants={fadeIn("up", "spring", 0.5, 0.75)}
         initial="hidden"
         animate="show"
-        className={`mt-4 md:-mt-20 justify-center pb-6 sm:pb-8 md:pb-10 ${styles.paddingX} relative z-10`}
+        className={`justify-center pb-6 sm:pb-8 md:pb-10 ${styles.paddingX} relative z-10`}
       >
         <div className='w-full max-w-6xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8'>
           {educations.map((education, index) => (
