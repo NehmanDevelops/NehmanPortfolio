@@ -123,7 +123,7 @@ const Education = () => {
   return (
     <div className={`-mt-16 bg-black relative z-10`}>
       <div
-        className={`bg-black md:rounded-2xl ${styles.padding} min-h-[100px] md:min-h-[200px]`}
+        className={`bg-black md:rounded-2xl ${styles.padding} min-h-[100px] md:min-h-[200px] relative z-20`}
       >
         <motion.div variants={textVariant()} initial="hidden" animate="show" className="text-center md:text-left">
           <p className={styles.sectionSubText}>My Academic Journey</p>
@@ -134,7 +134,7 @@ const Education = () => {
         variants={fadeIn("up", "spring", 0.5, 0.75)}
         initial="hidden"
         animate="show"
-        className={`-mt-12 md:-mt-20 justify-center pb-6 sm:pb-8 md:pb-10 ${styles.paddingX}`}
+        className={`mt-4 md:-mt-20 justify-center pb-6 sm:pb-8 md:pb-10 ${styles.paddingX} relative z-10`}
       >
         <div className='w-full max-w-6xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8'>
           {educations.map((education, index) => (
