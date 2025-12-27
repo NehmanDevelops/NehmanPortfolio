@@ -22,14 +22,14 @@ const About = () => {
         variants={fadeIn("up", "spring", 0.5, 0.75)}
         initial="hidden"
         animate="show"
-        className={`-mt-20 justify-center pb-12 ${styles.paddingX}`}
+        className={`-mt-12 md:-mt-20 justify-center pb-6 sm:pb-8 md:pb-12 ${styles.paddingX}`}
       >
-        <div className='about-card bg-[#1a1a1a] rounded-3xl p-10 md:p-12 lg:p-16 w-full max-w-6xl mx-auto border-2 border-[#ffd700]/30 hover:border-[#ffd700]/50 transition-all shadow-lg shadow-[#ffd700]/10'>
+          <div className='about-card bg-[#1a1a1a] rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 xl:p-16 w-full max-w-6xl mx-auto border-2 border-[#ffd700]/30 hover:border-[#ffd700]/50 transition-all shadow-lg shadow-[#ffd700]/10'>
           <div className='flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start'>
             {/* Photo Section - Centered on mobile, left on desktop */}
             <div className='flex-shrink-0 flex justify-center lg:justify-start'>
               <motion.div 
-                className='relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-visible'
+                className='relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-visible'
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -61,7 +61,7 @@ const About = () => {
             </div>
 
             {/* Content Section */}
-            <div className='flex-1 w-full space-y-8'>
+            <div className='flex-1 w-full space-y-4 sm:space-y-6 md:space-y-8'>
               {/* Badges */}
               <div className='flex flex-wrap gap-4'>
                 {/* Location Badge */}

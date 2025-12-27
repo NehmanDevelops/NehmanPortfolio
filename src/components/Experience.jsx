@@ -84,7 +84,7 @@ const Experience = () => {
         </h2>
       </motion.div>
 
-      <div className='mt-12 flex flex-col gap-6'>
+      <div className='mt-6 sm:mt-8 md:mt-12 flex flex-col gap-4 sm:gap-5 md:gap-6'>
         <AnimatePresence>
           {displayedExperiences.map((experience, index) => (
             <motion.div

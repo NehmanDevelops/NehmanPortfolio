@@ -118,7 +118,7 @@ const Contact = () => {
   // };
 
   return (
-    <div className={`xl:mt-12 flex flex-col lg:flex-row gap-8 lg:gap-12 overflow-hidden contact ${styles.paddingX}`}>
+    <div className={`xl:mt-12 flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-12 overflow-hidden contact ${styles.paddingX}`}>
       {/* Spinning Globe Section */}
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}

@@ -134,9 +134,9 @@ const Education = () => {
         variants={fadeIn("up", "spring", 0.5, 0.75)}
         initial="hidden"
         animate="show"
-        className={`-mt-20 justify-center pb-10 ${styles.paddingX}`}
+        className={`-mt-12 md:-mt-20 justify-center pb-6 sm:pb-8 md:pb-10 ${styles.paddingX}`}
       >
-        <div className='w-full max-w-6xl mx-auto space-y-6 md:space-y-8'>
+        <div className='w-full max-w-6xl mx-auto space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8'>
           {educations.map((education, index) => (
             <EducationCard key={`${education.name}-${index}`} index={index} {...education} />
           ))}

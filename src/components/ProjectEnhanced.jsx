@@ -259,8 +259,8 @@ const ProjectEnhanced = () => {
   }, [selected, comingSoonProjects]);
 
   return (
-    <div className="w-full py-20">
-      <motion.div variants={textVariant()} className="mb-12">
+    <div className="w-full py-8 sm:py-12 md:py-20">
+      <motion.div variants={textVariant()} className="mb-6 sm:mb-8 md:mb-12">
         <p className={styles.sectionSubText}>My Work</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
         <p className={`${styles.sectionSubText} mt-4 max-w-4xl text-gray-400 text-base`}>
@@ -269,7 +269,7 @@ const ProjectEnhanced = () => {
       </motion.div>
 
       {/* Filter Buttons */}
-      <div className="mb-12 flex flex-wrap gap-4 justify-center">
+      <div className="mb-6 sm:mb-8 md:mb-12 flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center">
         {filterOptions.map((option) => {
           const Icon = option.icon;
           const isActive = selected === option.id;
@@ -298,14 +298,14 @@ const ProjectEnhanced = () => {
           variants={staggerContainer(0.1, 0.1)}
           initial="hidden"
           animate="show"
-          className="space-y-8"
+          className="space-y-4 sm:space-y-6 md:space-y-8"
         >
           <motion.div variants={textVariant()}>
             <h3 className="text-[#ffd700] text-2xl sm:text-3xl font-bold mb-2">WIP / Coming Soon</h3>
-            <p className="text-gray-400 text-xs sm:text-sm mb-8">Projects currently in development</p>
+            <p className="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-6 md:mb-8">Projects currently in development</p>
           </motion.div>
           {comingSoonProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
               {comingSoonProjects.map((project, index) => (
                 <ComingSoonCard 
                   key={`coming-soon-project-${project.name}-${index}`}
@@ -322,7 +322,7 @@ const ProjectEnhanced = () => {
         </motion.div>
       ) : (
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
           variants={staggerContainer(0.1, 0.1)}
           initial="hidden"
           animate="show"

@@ -98,13 +98,13 @@ const Skills = () => {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#ffd700] rounded-full blur-3xl"></div>
       </div>
 
-      <motion.div variants={textVariant()} className={`${styles.padding} min-h-[200px] relative z-10`}>
+      <motion.div variants={textVariant()} className={`${styles.padding} min-h-[100px] md:min-h-[200px] relative z-10`}>
         <p className={styles.sectionSubText}>My Expertise</p>
         <h2 className={styles.sectionHeadText}>Skills.</h2>
       </motion.div>
 
       {/* Tabs */}
-      <div className={`${styles.paddingX} flex justify-center gap-6 mb-16 relative z-10`}>
+      <div className={`${styles.paddingX} flex justify-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12 md:mb-16 relative z-10`}>
         <motion.button
           onClick={() => setActiveTab("technical")}
           className={`px-10 py-4 rounded-xl font-bold text-lg transition-all relative overflow-hidden ${

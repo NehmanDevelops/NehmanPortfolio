@@ -8,7 +8,7 @@ import { profilePhoto } from '../src/assets'
 
 export default function HeroIntro() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center px-6 py-12">
+    <div className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
       {/* Background subtle effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-software-gold/10 via-black to-software-gold/5 opacity-50" />
