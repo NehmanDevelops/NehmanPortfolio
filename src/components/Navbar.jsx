@@ -84,6 +84,15 @@ const Navbar = () => {
             Skills
           </a>
           <a
+            href='/#experience'
+            className={`text-[15px] font-medium cursor-pointer transition-colors ${
+              active === "experience" ? "text-[#ffd700]" : "text-gray-400"
+            } hover:text-[#ffd700]`}
+            onClick={() => setActive("experience")}
+          >
+            Experience
+          </a>
+          <a
             href='/#contact'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${
               active === "contact" ? "text-[#ffd700]" : "text-gray-400"
@@ -155,6 +164,18 @@ const Navbar = () => {
               }}
             >
               Skills
+            </a>
+            <a
+              href='/#experience'
+              className={`text-xl font-medium cursor-pointer transition-colors ${
+                active === "experience" ? "text-[#ffd700]" : "text-gray-400"
+              } hover:text-[#ffd700]`}
+              onClick={() => {
+                setActive("experience");
+                setMobileMenuOpen(false);
+              }}
+            >
+              Experience
             </a>
             <a
               href='/#contact'
