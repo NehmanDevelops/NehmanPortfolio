@@ -780,7 +780,7 @@ import robloxIcon from "../components/download.png";
       .filter(p => p.name === "3D React Portfolio")
       .map(p => {
         const portfolioProject = { ...p };
-        portfolioProject.name = "NehmanPortfolio";
+        portfolioProject.name = "This Portfolio";
         portfolioProject.description = "A stunning, highly interactive personal portfolio website showcasing dual expertise in software development and sales. Built with Next.js 14 and React, featuring a dramatic split-screen design with immersive animations, 3D graphics, and personality-based navigation. The portfolio includes sections for About Me, Beyond the Code, Education, Projects, Skills, and Experience with a modern, responsive design.";
         portfolioProject.problemItSolves = "Traditional portfolios are static and don't effectively showcase the full range of a professional's skills, especially when someone has expertise in multiple domains (like development and sales). This portfolio solves that by providing an interactive, visually engaging platform that demonstrates both technical and interpersonal skills through a unique split-personality design, making it memorable and effective for potential employers and clients.";
         portfolioProject.tags = [
