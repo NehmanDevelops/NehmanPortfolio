@@ -10,9 +10,9 @@ const About = () => {
   return (
     <div className={`mt-2 bg-black relative z-10`}>
       <div
-        className={`bg-black rounded-2xl ${styles.padding} min-h-[200px]`}
+        className={`bg-black md:rounded-2xl ${styles.padding} min-h-[100px] md:min-h-[200px]`}
       >
-        <motion.div variants={textVariant()} initial="hidden" animate="show">
+        <motion.div variants={textVariant()} initial="hidden" animate="show" className="text-center md:text-left">
           <p className={styles.sectionSubText}>Introduction</p>
           <h2 className={styles.sectionHeadText}>About Me.</h2>
         </motion.div>
