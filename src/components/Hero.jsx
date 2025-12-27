@@ -17,18 +17,18 @@ const Hero = () => {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="absolute top-8 right-8 z-30"
+        className="absolute top-4 right-4 sm:top-8 sm:right-8 z-30"
       >
         <motion.a
           href="https://github.com/NehmanDevelops"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ffd700] to-[#ffed4e] flex items-center justify-center text-black shadow-lg shadow-[#ffd700]/50 hover:shadow-[#ffd700]/80 transition-all"
+          className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-[#ffd700] to-[#ffed4e] flex items-center justify-center text-black shadow-lg shadow-[#ffd700]/50 hover:shadow-[#ffd700]/80 transition-all"
           whileHover={{ scale: 1.15, boxShadow: '0 0 30px rgba(255, 215, 0, 0.8)' }}
           whileTap={{ scale: 0.95 }}
           aria-label="GitHub Profile"
         >
-          <AiOutlineGithub className="text-2xl" />
+          <AiOutlineGithub className="text-lg sm:text-xl md:text-2xl" />
         </motion.a>
       </motion.div>
 
@@ -37,9 +37,9 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="absolute left-8 md:left-16 top-20 md:top-32 z-20"
+        className="absolute left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 top-20 md:top-32 z-20"
       >
-        <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80">
+        <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80">
           <div className="absolute inset-0 rounded-full border-4 border-[#ffd700] shadow-lg shadow-[#ffd700]/50"></div>
           <div className="absolute inset-2 rounded-full overflow-hidden bg-[#1a1a1a]">
             <img
@@ -55,7 +55,7 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      <div className={`absolute inset-0 ${styles.paddingX} flex flex-col justify-start items-start z-10 max-w-7xl mx-auto pt-20 md:pt-32 pl-64 md:pl-80 lg:pl-96`}>
+      <div className={`absolute inset-0 ${styles.paddingX} flex flex-col justify-start items-center md:items-start z-10 max-w-7xl mx-auto pt-48 sm:pt-56 md:pt-32 md:pl-64 lg:pl-80 xl:pl-96`}>
         {/* Main Content */}
         <div className="flex flex-col">
           {/* Greeting and Name */}
@@ -82,7 +82,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mb-4"
           >
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold">
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-center md:text-left">
               <span className="bg-gradient-to-r from-[#ffd700] via-[#ffed4e] to-[#ffd700] bg-clip-text text-transparent">
                 Second-Year Computer Science Student at York University | Full-Stack Developer with Sales & Customer Experience
               </span>
@@ -94,13 +94,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex flex-wrap gap-4 items-center mb-6"
+            className="flex flex-wrap gap-3 sm:gap-4 items-center justify-center md:justify-start mb-6 w-full"
           >
             <motion.a
               href="/Nehman_Rahimi.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black font-bold rounded-xl hover:shadow-lg hover:shadow-[#ffd700]/50 transition-all"
+              className="px-4 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black font-bold rounded-xl hover:shadow-lg hover:shadow-[#ffd700]/50 transition-all text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -108,7 +108,7 @@ const Hero = () => {
             </motion.a>
             <motion.a
               href="#contact"
-              className="px-6 py-3 border-2 border-[#ffd700] text-[#ffd700] font-bold rounded-xl hover:bg-[#ffd700] hover:text-black transition-all"
+              className="px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-[#ffd700] text-[#ffd700] font-bold rounded-xl hover:bg-[#ffd700] hover:text-black transition-all text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -121,37 +121,37 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex gap-4 items-center mb-8"
+            className="flex gap-3 sm:gap-4 items-center justify-center md:justify-start mb-8 w-full"
           >
             <motion.a
               href="https://github.com/NehmanDevelops"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border-2 border-[#ffd700] flex items-center justify-center text-[#ffd700] hover:bg-[#ffd700] hover:text-black transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#ffd700] flex items-center justify-center text-[#ffd700] hover:bg-[#ffd700] hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(255, 215, 0, 0.5)' }}
               whileTap={{ scale: 0.9 }}
               aria-label="GitHub Profile"
             >
-              <AiOutlineGithub className="text-xl" />
+              <AiOutlineGithub className="text-lg sm:text-xl" />
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/nehman-rahimi-916225258/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 rounded-full border-2 border-[#ffd700] flex items-center justify-center text-[#ffd700] hover:bg-[#ffd700] hover:text-black transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#ffd700] flex items-center justify-center text-[#ffd700] hover:bg-[#ffd700] hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(255, 215, 0, 0.5)' }}
               whileTap={{ scale: 0.9 }}
               aria-label="LinkedIn Profile"
             >
-              <ImLinkedin className="text-xl" />
+              <ImLinkedin className="text-lg sm:text-xl" />
             </motion.a>
             <motion.a
               href="mailto:nehmanmain@gmail.com"
-              className="w-12 h-12 rounded-full border-2 border-[#ffd700] flex items-center justify-center text-[#ffd700] hover:bg-[#ffd700] hover:text-black transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#ffd700] flex items-center justify-center text-[#ffd700] hover:bg-[#ffd700] hover:text-black transition-all duration-300"
               whileHover={{ scale: 1.1, boxShadow: '0 0 20px rgba(255, 215, 0, 0.5)' }}
               whileTap={{ scale: 0.9 }}
             >
-              <HiOutlineMail className="text-xl" />
+              <HiOutlineMail className="text-lg sm:text-xl" />
             </motion.a>
           </motion.div>
         </div>
@@ -172,7 +172,7 @@ const Hero = () => {
           className='flex flex-col items-center gap-2 text-[#ffd700] hover:text-[#ffed4e] transition-colors cursor-pointer'
           whileHover={{ scale: 1.05 }}
         >
-          <p className='text-sm md:text-base font-medium whitespace-nowrap'>
+          <p className='text-xs sm:text-sm md:text-base font-medium whitespace-nowrap px-2 text-center'>
             Scroll down to see rest of portfolio
           </p>
           <motion.div

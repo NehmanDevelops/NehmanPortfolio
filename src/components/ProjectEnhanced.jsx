@@ -277,7 +277,7 @@ const ProjectEnhanced = () => {
             <motion.button
               key={option.id}
               onClick={() => setSelected(option.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${
+              className={`flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-lg font-medium transition-all text-sm sm:text-base ${
                 isActive
                   ? "bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black shadow-lg shadow-[#ffd700]/50"
                   : "bg-[#1a1a1a] text-white border border-[#ffd700]/30 hover:border-[#ffd700]/60"
@@ -301,8 +301,8 @@ const ProjectEnhanced = () => {
           className="space-y-8"
         >
           <motion.div variants={textVariant()}>
-            <h3 className="text-[#ffd700] text-3xl font-bold mb-2">WIP / Coming Soon</h3>
-            <p className="text-gray-400 text-sm mb-8">Projects currently in development</p>
+            <h3 className="text-[#ffd700] text-2xl sm:text-3xl font-bold mb-2">WIP / Coming Soon</h3>
+            <p className="text-gray-400 text-xs sm:text-sm mb-8">Projects currently in development</p>
           </motion.div>
           {comingSoonProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
