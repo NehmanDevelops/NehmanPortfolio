@@ -48,6 +48,37 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+### 🔄 Syncing with GitHub
+
+**Important**: Always sync with GitHub before starting work to ensure you have the latest version.
+
+**Option 1 - Using npm script (Windows PowerShell):**
+```bash
+npm run sync
+```
+
+**Option 2 - Run the script directly:**
+
+Windows PowerShell:
+```powershell
+.\sync-from-github.ps1
+```
+
+Linux/Mac:
+```bash
+chmod +x sync-from-github.sh
+./sync-from-github.sh
+```
+
+**Option 3 - Manual git commands:**
+```bash
+git fetch origin
+git reset --hard origin/main
+git pull origin main
+```
+
+> ⚠️ **Note**: This will discard any local changes and reset your project to match GitHub exactly.
+
 ## 📁 Project Structure
 
 ```
