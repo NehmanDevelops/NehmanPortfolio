@@ -67,18 +67,18 @@ const EducationCard = ({
           {/* Education Details */}
           <div className={`${isRBC ? 'flex-1' : 'flex-1 w-full'}`}>
             {/* University Name */}
-            <h4 className={`text-white ${isRBC ? 'text-base md:text-lg' : certificateImage ? 'text-lg md:text-xl' : 'text-2xl md:text-3xl lg:text-4xl'} font-bold mb-2 group-hover:text-[#ffd700] transition-colors`}>
+            <h4 className={`text-white ${isRBC ? 'text-sm sm:text-base md:text-lg' : certificateImage ? 'text-base sm:text-lg md:text-xl' : 'text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl'} font-bold mb-2 group-hover:text-[#ffd700] transition-colors break-words`}>
               {name}
             </h4>
             
             {/* Degree */}
-            <p className={`text-[#ffd700] ${isRBC ? 'text-sm' : certificateImage ? 'text-sm md:text-base' : 'text-lg md:text-xl lg:text-2xl'} font-semibold mb-1`}>
+            <p className={`text-[#ffd700] ${isRBC ? 'text-xs sm:text-sm' : certificateImage ? 'text-xs sm:text-sm md:text-base' : 'text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl'} font-semibold mb-1 break-words`}>
               {degree}
             </p>
             
             {/* Stream */}
             {stream && (
-              <p className='text-[#ffd700]/80 text-base md:text-lg font-medium mb-4'>
+              <p className='text-[#ffd700]/80 text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-3 sm:mb-4 break-words'>
                 {stream}
               </p>
             )}
@@ -90,14 +90,14 @@ const EducationCard = ({
                   whileHover={{ scale: 1.05 }}
                   className={`bg-gradient-to-r from-black/60 to-black/40 border-2 border-[#ffd700]/30 rounded-lg ${isRBC ? 'px-3 py-1.5' : 'px-4 py-2'} flex items-center gap-2 hover:border-[#ffd700] hover:bg-[#ffd700]/10 transition-all cursor-default`}>
                   <MdLocationOn className={`text-[#ffd700] ${isRBC ? 'text-sm' : 'text-base md:text-lg'} flex-shrink-0`} />
-                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-sm md:text-base'} font-medium`}>{location}</span>
+                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-xs sm:text-sm md:text-base'} font-medium break-words`}>{location}</span>
                 </motion.div>
               )}
               {graduationYear && (
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className={`bg-gradient-to-r from-black/60 to-black/40 border-2 border-[#ffd700]/30 rounded-lg ${isRBC ? 'px-3 py-1.5' : 'px-4 py-2'} hover:border-[#ffd700] hover:bg-[#ffd700]/10 transition-all cursor-default`}>
-                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-sm md:text-base'} font-medium`}>
+                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-xs sm:text-sm md:text-base'} font-medium break-words`}>
                     {currentYear ? 'Expected Graduation' : 'Graduated'}: <span className='text-[#ffd700]'>{graduationYear}</span>
                   </span>
                 </motion.div>
@@ -106,7 +106,7 @@ const EducationCard = ({
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className={`bg-gradient-to-r from-black/60 to-black/40 border-2 border-[#ffd700]/30 rounded-lg ${isRBC ? 'px-3 py-1.5' : 'px-4 py-2'} hover:border-[#ffd700] hover:bg-[#ffd700]/10 transition-all cursor-default`}>
-                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-sm md:text-base'} font-medium`}>
+                  <span className={`text-white ${isRBC ? 'text-xs' : 'text-xs sm:text-sm md:text-base'} font-medium break-words`}>
                     Current: <span className='text-[#ffd700]'>{currentYear}</span>
                   </span>
                 </motion.div>

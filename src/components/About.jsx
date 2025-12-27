@@ -63,75 +63,75 @@ const About = () => {
             {/* Content Section */}
             <div className='flex-1 w-full space-y-4 sm:space-y-6 md:space-y-8'>
               {/* Badges */}
-              <div className='flex flex-wrap gap-4'>
+              <div className='flex flex-wrap gap-3 sm:gap-4'>
                 {/* Location Badge */}
                 <motion.div 
-                  className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-6 py-4 hover:border-[#ffd700] transition-all cursor-default'
+                  className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-4 py-2 sm:px-6 sm:py-4 hover:border-[#ffd700] transition-all cursor-default'
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className='flex items-center gap-2 mb-1'>
-                    <MdLocationOn className='text-[#ffd700] text-xl' />
-                    <p className='text-[#ffd700] font-bold text-lg'>Toronto</p>
+                  <div className='flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1'>
+                    <MdLocationOn className='text-[#ffd700] text-base sm:text-xl' />
+                    <p className='text-[#ffd700] font-bold text-base sm:text-lg'>Toronto</p>
                   </div>
-                  <p className='text-gray-400 text-sm'>Ontario, Canada</p>
+                  <p className='text-gray-400 text-xs sm:text-sm'>Ontario, Canada</p>
                 </motion.div>
 
                 {/* Role Badge */}
                 <motion.div 
-                  className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-6 py-4 hover:border-[#ffd700] transition-all cursor-default'
+                  className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-4 py-2 sm:px-6 sm:py-4 hover:border-[#ffd700] transition-all cursor-default'
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className='text-[#ffd700] font-bold text-lg mb-1'>Full-Stack</p>
-                  <p className='text-gray-400 text-sm'>Developer</p>
+                  <p className='text-[#ffd700] font-bold text-base sm:text-lg mb-0.5 sm:mb-1'>Full-Stack</p>
+                  <p className='text-gray-400 text-xs sm:text-sm'>Developer</p>
                 </motion.div>
 
                 {/* Hackathon Winner Badge */}
                 <motion.div 
-                  className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-6 py-4 hover:border-[#ffd700] transition-all cursor-default'
+                  className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-4 py-2 sm:px-6 sm:py-4 hover:border-[#ffd700] transition-all cursor-default'
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className='text-[#ffd700] font-bold text-lg mb-1'>1x</p>
-                  <p className='text-gray-400 text-sm'>Hackathon Winner</p>
+                  <p className='text-[#ffd700] font-bold text-base sm:text-lg mb-0.5 sm:mb-1'>1x</p>
+                  <p className='text-gray-400 text-xs sm:text-sm'>Hackathon Winner</p>
                 </motion.div>
               </div>
 
               {/* Description - Enhanced formatting */}
-              <div className='space-y-6'>
-                <p className='text-gray-200 text-lg md:text-xl leading-relaxed'>
+              <div className='space-y-4 sm:space-y-5 md:space-y-6'>
+                <p className='text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed break-words'>
                   Aspiring full-stack developer based in Toronto, currently in my second year of studying Computer Science. 
                   Passionate about learning, experimenting with new technologies, and creating applications that make an impact.
                 </p>
                 
-                <p className='text-gray-300 text-base md:text-lg leading-relaxed'>
+                <p className='text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed break-words'>
                   Before transitioning to tech, I worked in sales at GUESS? and Urban Planet, where I exceeded targets by understanding 
                   customer needs and solving problems quickly. These skills now translate to creating intuitive user experiences and 
                   debugging complex issues.
                 </p>
 
                 {/* Quick Stats for Recruiters */}
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 pt-4'>
-                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
-                    <p className='text-[#ffd700] text-2xl md:text-3xl font-bold'>5+</p>
-                    <p className='text-gray-400 text-sm mt-1'>Projects</p>
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4'>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-2 sm:p-3 md:p-4 text-center'>
+                    <p className='text-[#ffd700] text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold'>5+</p>
+                    <p className='text-gray-400 text-xs sm:text-sm mt-1'>Projects</p>
                   </div>
-                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
-                    <p className='text-[#ffd700] text-2xl md:text-3xl font-bold'>15+</p>
-                    <p className='text-gray-400 text-sm mt-1'>Technologies</p>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-2 sm:p-3 md:p-4 text-center'>
+                    <p className='text-[#ffd700] text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold'>15+</p>
+                    <p className='text-gray-400 text-xs sm:text-sm mt-1'>Technologies</p>
                   </div>
-                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
-                    <p className='text-[#ffd700] text-2xl md:text-3xl font-bold'>2nd</p>
-                    <p className='text-gray-400 text-sm mt-1'>Year CS</p>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-2 sm:p-3 md:p-4 text-center'>
+                    <p className='text-[#ffd700] text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold'>2nd</p>
+                    <p className='text-gray-400 text-xs sm:text-sm mt-1'>Year CS</p>
                   </div>
-                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-4 text-center'>
-                    <p className='text-[#ffd700] text-lg md:text-xl font-bold'>Open to</p>
-                    <p className='text-gray-400 text-sm mt-1'>Internships 2026</p>
+                  <div className='bg-[#0a0a0a] border border-[#ffd700]/30 rounded-lg p-2 sm:p-3 md:p-4 text-center'>
+                    <p className='text-[#ffd700] text-sm sm:text-base md:text-lg lg:text-xl font-bold break-words'>Open to</p>
+                    <p className='text-gray-400 text-xs sm:text-sm mt-1 break-words'>Internships 2026</p>
                   </div>
                 </div>
 
-                <p className='text-[#ffd700] text-base md:text-lg font-medium leading-relaxed italic'>
+                <p className='text-[#ffd700] text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed italic break-words'>
                   Excited to bring my problem-solving mindset and rapid learning ability to a development team.
                 </p>
               </div>
