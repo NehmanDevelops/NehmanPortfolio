@@ -11,13 +11,13 @@ import "./Hero.scss";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto flex items-start justify-center pt-16 md:pt-20`}>
+    <section className={`relative w-full min-h-screen mx-auto flex items-start justify-center`}>
       {/* GitHub Link - Top Right */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="absolute top-4 right-4 sm:top-8 sm:right-8 z-30"
+        className="absolute top-20 right-4 sm:top-24 sm:right-8 md:top-8 md:right-8 z-30"
       >
         <motion.a
           href="https://github.com/NehmanDevelops"
@@ -37,7 +37,7 @@ const Hero = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="absolute left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 top-24 md:top-40 z-20"
+        className="absolute left-1/2 -translate-x-1/2 md:left-8 md:translate-x-0 top-32 md:top-32 z-20"
       >
         <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80">
           <div className="absolute inset-0 rounded-full border-4 border-[#ffd700] shadow-lg shadow-[#ffd700]/50"></div>
@@ -55,7 +55,7 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      <div className={`absolute inset-0 ${styles.paddingX} flex flex-col justify-start items-center md:items-start z-10 max-w-7xl mx-auto pt-16 sm:pt-20 md:pt-24 md:pl-64 lg:pl-80 xl:pl-96`}>
+      <div className={`relative w-full ${styles.paddingX} flex flex-col justify-start items-center md:items-start z-10 max-w-7xl mx-auto pt-24 sm:pt-28 md:pt-32 md:pl-64 lg:pl-80 xl:pl-96 pb-8`}>
         {/* Main Content */}
         <div className="flex flex-col">
           {/* Greeting and Name */}
