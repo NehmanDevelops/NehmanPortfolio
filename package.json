@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sync": "powershell -ExecutionPolicy Bypass -File ./sync-from-github.ps1"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
@@ -28,7 +29,7 @@
     "react-router-dom": "^6.30.2",
     "react-tilt": "^1.0.2",
     "react-vertical-timeline-component": "^3.6.0",
-    "three": "^0.150.1"
+    "three": "^0.160.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
