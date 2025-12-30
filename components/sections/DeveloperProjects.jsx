@@ -6,6 +6,14 @@ import { useState } from 'react'
 const projects = [
   {
     id: 1,
+    name: 'Apex Financial',
+    description: 'Premium digital banking overhaul with real-time interactivity, multi-language support (EN/FR), and dynamic themes.',
+    tech: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'localStorage'],
+    github: 'https://github.com/NehmanDevelops/Apex-Financial-Bank',
+    demo: 'https://apex-financial-bank.vercel.app/',
+  },
+  {
+    id: 2,
     name: 'E-Commerce Platform',
     description: 'Full-stack e-commerce solution with real-time inventory',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
@@ -13,18 +21,10 @@ const projects = [
     demo: '#',
   },
   {
-    id: 2,
+    id: 3,
     name: 'AI Chatbot',
     description: 'Intelligent chatbot using NLP and machine learning',
     tech: ['Python', 'TensorFlow', 'React', 'WebSocket'],
-    github: '#',
-    demo: '#',
-  },
-  {
-    id: 3,
-    name: 'Cloud Infrastructure',
-    description: 'Scalable cloud architecture with microservices',
-    tech: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
     github: '#',
     demo: '#',
   },
@@ -58,9 +58,9 @@ export default function DeveloperProjects() {
             <div className="flex items-center gap-2 mb-4">
               <h3 className="text-xl font-bold text-white">{project.name}</h3>
             </div>
-            
+
             <p className="text-gray-300 mb-4">{project.description}</p>
-            
+
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tech.map((tech) => (
                 <span

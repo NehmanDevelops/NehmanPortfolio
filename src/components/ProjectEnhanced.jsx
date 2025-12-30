@@ -22,6 +22,8 @@ const ProjectCard = ({
   isVideo,
   category,
   problemItSolves,
+  mediaObjectPosition,
+  mediaHeightClass,
 }) => {
   return (
     <motion.div
@@ -36,11 +38,12 @@ const ProjectCard = ({
         
         {/* Image/Video Section */}
         {image && (
-          <div className="relative w-full h-64 overflow-hidden bg-[#0a0a0a]">
+          <div className={`relative w-full ${mediaHeightClass || "h-64"} overflow-hidden bg-[#0a0a0a]`}>
             {isVideo || (typeof image === 'string' && (image.endsWith('.mp4') || image.endsWith('.webm') || image.endsWith('.mov'))) || (image?.src && typeof image.src === 'string' && (image.src.endsWith('.mp4') || image.src.endsWith('.webm') || image.src.endsWith('.mov'))) ? (
               <video
                 src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image)}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                style={mediaObjectPosition ? { objectPosition: mediaObjectPosition } : undefined}
                 autoPlay
                 loop
                 muted
@@ -54,6 +57,7 @@ const ProjectCard = ({
                 src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image)}
                 alt={name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                style={mediaObjectPosition ? { objectPosition: mediaObjectPosition } : undefined}
                 onError={(e) => {
                   e.target.style.background = '#1a1a1a';
                 }}

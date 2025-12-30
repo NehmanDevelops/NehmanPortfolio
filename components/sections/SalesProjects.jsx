@@ -6,6 +6,14 @@ import { useState } from 'react'
 const deals = [
   {
     id: 1,
+    client: 'Leading North American Bank',
+    value: '$4.2M',
+    description: 'Custom digital banking overhaul with Next.js, implementing e-Transfer, Bill Pay, and advanced security features.',
+    outcome: 'Successfully delivered pre-production demo; finalized for Q1 deployment.',
+    icon: '🏦',
+  },
+  {
+    id: 2,
     client: 'Fortune 500 Tech Company',
     value: '$2.5M',
     description: 'Enterprise software solution - 3-year contract',
@@ -13,7 +21,7 @@ const deals = [
     icon: '🏆',
   },
   {
-    id: 2,
+    id: 3,
     client: 'Startup Accelerator',
     value: '$850K',
     description: 'SaaS platform licensing for 50+ startups',
@@ -21,20 +29,12 @@ const deals = [
     icon: '⚡',
   },
   {
-    id: 3,
+    id: 4,
     client: 'Healthcare Network',
     value: '$1.2M',
     description: 'Cloud infrastructure migration project',
     outcome: 'Renewed for 2 additional years',
     icon: '💊',
-  },
-  {
-    id: 4,
-    client: 'Financial Services Firm',
-    value: '$3.1M',
-    description: 'Security and compliance platform',
-    outcome: 'Largest deal of the quarter',
-    icon: '💳',
   },
 ]
 
