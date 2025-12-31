@@ -772,6 +772,21 @@ const categorizeProject = (project, category) => ({ ...project, category });
 const allProjects = [
   // FullStack Projects - projects with both frontend and backend
   categorizeProject({
+    name: "FraudGuard",
+    description: "A real-time fraud detection system with live transaction monitoring, ML-powered risk scoring, and SHAP explainability. Features WebSocket streaming, interactive dashboard with transaction filtering, and one-click fraud injection for testing.",
+    problemItSolves: "Financial institutions need to detect fraudulent transactions in real-time while understanding why transactions are flagged. FraudGuard solves this by combining ML-based fraud detection with explainable AI (SHAP values), giving analysts both instant alerts and clear reasoning behind each prediction.",
+    tags: [
+      { name: "React", color: "blue-text-gradient" },
+      { name: "FastAPI", color: "green-text-gradient" },
+      { name: "Python ML", color: "pink-text-gradient" },
+      { name: "WebSocket", color: "blue-text-gradient" },
+      { name: "SHAP", color: "green-text-gradient" },
+    ],
+    image: fraudguard,
+    source_link: "https://github.com/NehmanDevelops/Fraud-Control",
+    source_code_link: "https://github.com/NehmanDevelops/Fraud-Control",
+  }, "fullstack"),
+  categorizeProject({
     name: "Apex Financial",
     description: "A premium, high-fidelity digital banking experience designed to showcase technical mastery in Full-Stack development and advanced client-side logic. Features real-time e-Transfers, interactive spending analytics, multi-language support (EN/FR), and a high-performance dark mode interface.",
     problemItSolves: "Modern banking users demand seamless, fast, and visually stunning interfaces. Apex Financial demonstrates a production-grade UI that handles complex client-side state, data persistence via localStorage (demo mode), and smooth micro-animations that exceed standard banking app expectations.",
