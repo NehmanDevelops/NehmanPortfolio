@@ -804,6 +804,23 @@ const allProjects = [
     source_code_link: "https://github.com/NehmanDevelops/Apex-Financial-Bank",
   }, "fullstack"),
   categorizeProject({
+    name: "Payment Pipeline",
+    description: "Real-time visualization of how payments flow through a banking system. Watch transactions flow through 5 stages: Fraud Check (ML-based risk scoring), Balance Verify (Account validation), Processing (Transaction execution), and Settlement (Final clearing). Features real-time metrics, retry queue for failed transactions, and expandable audit trails.",
+    problemItSolves: "Banking systems process millions of transactions daily, but the flow is invisible to most people. Payment Pipeline solves this by providing an interactive, real-time visualization of the exact stages transactions go through - from fraud detection to final settlement. Perfect for learning, interviews, and technical demos.",
+    tags: [
+      { name: "Next.js 14", color: "blue-text-gradient" },
+      { name: "TypeScript", color: "green-text-gradient" },
+      { name: "Tailwind CSS", color: "pink-text-gradient" },
+      { name: "Framer Motion", color: "blue-text-gradient" },
+      { name: "Real-time", color: "green-text-gradient" },
+      { name: "Payment Systems", color: "pink-text-gradient" },
+    ],
+    image: "/Images/photo1.png",
+    isVideo: false,
+    source_link: "https://github.com/NehmanDevelops/Payment-Pipeline",
+    source_code_link: "https://github.com/NehmanDevelops/Payment-Pipeline",
+  }, "fullstack"),
+  categorizeProject({
     name: "PinPoint",
     description: "PinPoint is a smart grocery planning and health-focused web application built to help users—especially students—find the best grocery prices near them based on their location, diet preferences, and meal plans. Features include Cheap Grocery Finder, Price Matcher with QR codes, GrocyBot AI assistant, and DAPR dynamic recipe system that adapts to local prices.",
     problemItSolves: "Students and budget-conscious shoppers struggle to find the cheapest grocery prices and plan meals around their budget. PinPoint solves this by providing location-based price comparison, personalized meal planning that adapts to local prices, and an AI assistant to help with grocery planning decisions.",
