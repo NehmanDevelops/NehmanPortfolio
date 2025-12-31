@@ -50,6 +50,7 @@ import snl from "./project/snl.jpeg";
 import pinpoint from "./project/pinpoint1.png";
 import pricepatrol from "./project/pricepatrol.png";
 import profilePhoto from "./project/IMG_7970.png";
+import fraudguard from "./project/fraudguard.png";
 
 export {
   logo,
@@ -78,5 +79,5 @@ export {
   oop,crud,dwld,onetomany,yml,
   trie,ds,cg,
   port_3d, jsp, chitchat, notes, react1,
-  be,sql, mini, snl, pinpoint, pricepatrol, nehmanbot, profilePhoto,
+  be,sql, mini, snl, pinpoint, pricepatrol, nehmanbot, profilePhoto, fraudguard,
 };

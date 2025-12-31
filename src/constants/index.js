@@ -5,7 +5,7 @@ import {
   crypto, oop, yml, crud, dwld, onetomany,
   trie, ds, cg,
   port_3d, jsp, chitchat, notes, react1,
-  be, sql, mini, snl, pinpoint, pricepatrol, nehmanbot,
+  be, sql, mini, snl, pinpoint, pricepatrol, nehmanbot, fraudguard,
 } from "../assets";
 import robloxIcon from "../components/download.png";
 
@@ -339,6 +339,37 @@ export const cProject = [
 ];
 
 export const webProject = [
+  {
+    name: "FraudGuard Simulator",
+    description:
+      "Real-time fraud detection dashboard using ML (XGBoost + Isolation Forest) to analyze transactions and flag fraud. Features WebSocket streaming, SHAP explainability, and a professional banking-style UI.",
+    problemItSolves: "Banks lose billions annually to credit card fraud. FraudGuard demonstrates how ensemble ML models can detect fraudulent transactions in real-time with 96% recall, helping prevent financial losses while providing transparent AI explanations.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "FastAPI",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Python",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "XGBoost",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "WebSocket",
+        color: "green-text-gradient",
+      },
+    ],
+    image: fraudguard,
+    source_link: "https://github.com/NehmanDevelops/Fraud-Control",
+    source_code_link: "https://github.com/NehmanDevelops/Fraud-Control",
+  },
   {
     name: "3D React Portfolio",
     description:
