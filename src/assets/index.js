@@ -50,7 +50,7 @@ import snl from "./project/snl.jpeg";
 import pinpoint from "./project/pinpoint1.png";
 import pricepatrol from "./project/pricepatrol.png";
 import profilePhoto from "./project/IMG_7970.png";
-import fraudguard from "./project/fraudguard.png";
+import fraudguard from "../../Images/fraud.png";
 
 export {
   logo,
