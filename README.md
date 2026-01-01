@@ -184,4 +184,3 @@ For questions or inquiries, please use the contact forms in the portfolio.
 
 ---
 
-**Built with ❤️ and a split personality**
