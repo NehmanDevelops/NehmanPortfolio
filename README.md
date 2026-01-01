@@ -1,4 +1,4 @@
-# Jekyll & Hyde Portfolio
+# Nehman Rahimi Portfolio
 
 A stunning, highly interactive personal portfolio website showcasing dual expertise in software development and sales. Built with Next.js, featuring a dramatic split-screen design with immersive animations and personality-based navigation.
 
