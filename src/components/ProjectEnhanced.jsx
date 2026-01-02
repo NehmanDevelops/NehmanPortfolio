@@ -130,7 +130,7 @@ const ProjectCard = ({
           </div>
 
           {/* Description */}
-          <p className="text-gray-200 text-sm leading-relaxed mb-4 line-clamp-3 group-hover:text-white transition-colors flex-1">
+          <p className="text-gray-200 text-sm leading-relaxed mb-4 group-hover:text-white transition-colors">
             {description}
           </p>
 
