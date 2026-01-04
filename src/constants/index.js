@@ -420,7 +420,7 @@ export const webProject = [
       },
     ],
     image: pricepatrol,
-    source_link: "https://tl7rpr.csb.app/",
+    source_link: "https://price-patrol-mu.vercel.app/",
     source_code_link: "https://github.com/NehmanDevelops/PricePatrol",
     isHackathonWinner: true,
     teamMembers: ["Sean", "Agasti Kulkarni", "Nehman Rahimi", "Chirayu Singhania"],
