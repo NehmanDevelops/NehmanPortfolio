@@ -392,6 +392,21 @@ export const webProject = [
     source_link: "https://shinchancode.github.io/3d-react-portfolio/",
     source_code_link: "https://github.com/shinchancode/3d-react-portfolio",
   },
+    {
+      name: "Insurance Dashboard",
+      description:
+        "Modern insurance claims dashboard with real-time status updates, document uploads, and instant notifications. Built with a full-stack architecture for seamless user experience.",
+      tags: [
+        { name: "React", color: "blue-text-gradient" },
+        { name: "Node.js", color: "green-text-gradient" },
+        { name: "Express", color: "pink-text-gradient" },
+        { name: "MongoDB", color: "blue-text-gradient" },
+        { name: "Full-Stack", color: "green-text-gradient" },
+      ],
+        image: "/Images/insurance.png",
+      source_link: "https://insurance-dash-board.vercel.app/",
+      source_code_link: "https://github.com/NehmanDevelops/Insurance-DashBoard",
+    },
   {
     name: "PricePatrol",
     description:
@@ -820,6 +835,21 @@ const allProjects = [
     source_link: "https://github.com/NehmanDevelops/Payment-Pipeline",
     source_code_link: "https://github.com/NehmanDevelops/Payment-Pipeline",
   }, "fullstack"),
+    categorizeProject({
+      name: "Insurance Dashboard",
+      description: "Modern insurance claims dashboard with real-time status updates, document uploads, and instant notifications. Built with a full-stack architecture for seamless user experience.",
+      problemItSolves: "Insurance customers and agents need a streamlined way to manage claims, upload documents, and track status in real-time. Insurance Dashboard solves this by providing a modern, interactive dashboard for claims management, document uploads, and instant notifications.",
+      tags: [
+        { name: "React", color: "blue-text-gradient" },
+        { name: "Node.js", color: "green-text-gradient" },
+        { name: "Express", color: "pink-text-gradient" },
+        { name: "MongoDB", color: "blue-text-gradient" },
+        { name: "Full-Stack", color: "green-text-gradient" },
+      ],
+      image: "/Images/insurance.png",
+      source_link: "https://insurance-dash-board.vercel.app/",
+      source_code_link: "https://github.com/NehmanDevelops/Insurance-DashBoard",
+    }, "fullstack"),
   categorizeProject({
     name: "PinPoint",
     description: "PinPoint is a smart grocery planning and health-focused web application built to help users—especially students—find the best grocery prices near them based on their location, diet preferences, and meal plans. Features include Cheap Grocery Finder, Price Matcher with QR codes, GrocyBot AI assistant, and DAPR dynamic recipe system that adapts to local prices.",
