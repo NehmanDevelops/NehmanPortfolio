@@ -33,13 +33,13 @@ const ProjectCard = ({
         }}
         className={`project-box bg-tertiary p-5 rounded-2xl sm:w-[330px] w-full ${category === "coming-soon" ? "opacity-70" : ""}`}
       >
-        {/* Project Image/Icon for Coming Soon */}
-        {category === "coming-soon" && image && (
-          <div className='mb-4 flex justify-center items-center h-32 bg-[#0a0a0a] rounded-xl overflow-hidden'>
+        {/* Project Image/Icon (show when available) */}
+        {image && (
+          <div className='mb-4 flex justify-center items-center h-40 bg-[#0a0a0a] rounded-xl overflow-hidden'>
             <img
               src={typeof image === 'string' ? image : (image?.src || image?.default?.src || image)}
               alt={name}
-              className="max-w-full max-h-full object-contain"
+              className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}
@@ -162,6 +162,10 @@ const Project = () => {
           />
         ))}
       </ul>
+
+      {process.env.NODE_ENV === 'development' && (
+        <pre className='text-white mb-4'>{JSON.stringify(data.map(p => p.name), null, 2)}</pre>
+      )}
 
       <div className='box mt-20 flex flex-wrap justify-center gap-7'>
         {data.length > 0 ? (
