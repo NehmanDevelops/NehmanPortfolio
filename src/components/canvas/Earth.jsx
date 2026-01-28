@@ -4,8 +4,10 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
+const basePath = process.env.NODE_ENV === 'production' ? '/NehmanPortfolio' : '';
+
 const Earth = () => {
-  const earth = useGLTF("/planet/scene.gltf");
+  const earth = useGLTF(`${basePath}/planet/scene.gltf`);
 
   return (
     <primitive object={earth.scene} scale={2} position-y={0} rotation-y={0} />

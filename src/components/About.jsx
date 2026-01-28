@@ -6,6 +6,8 @@ import { SectionWrapper } from "../hoc";
 import { textVariant, fadeIn } from "../utils/motion";
 import "./About.scss";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const About = () => {
   return (
     <div className={`pt-24 md:pt-32 bg-black relative z-10`}>
@@ -22,17 +24,17 @@ const About = () => {
         animate="show"
         className={`justify-center pb-6 sm:pb-8 md:pb-12 ${styles.paddingX} relative z-10`}
       >
-          <div className='about-card bg-[#1a1a1a] rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 xl:p-16 w-full max-w-6xl mx-auto border-2 border-[#ffd700]/30 hover:border-[#ffd700]/50 transition-all shadow-lg shadow-[#ffd700]/10'>
+        <div className='about-card bg-[#1a1a1a] rounded-3xl p-4 sm:p-6 md:p-10 lg:p-12 xl:p-16 w-full max-w-6xl mx-auto border-2 border-[#ffd700]/30 hover:border-[#ffd700]/50 transition-all shadow-lg shadow-[#ffd700]/10'>
           <div className='flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-start'>
             {/* Photo Section - Centered on mobile, left on desktop */}
             <div className='flex-shrink-0 flex justify-center lg:justify-start'>
-              <motion.div 
+              <motion.div
                 className='relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-visible'
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
                 {/* Gold Gradient Border Ring with glow */}
-                <div 
+                <div
                   className="absolute inset-0 rounded-full p-2"
                   style={{
                     background: 'linear-gradient(135deg, #ffd700, #ffed4e, #ffd700, #b8860b)',
@@ -41,7 +43,7 @@ const About = () => {
                 >
                   <div className="w-full h-full rounded-full bg-black overflow-hidden">
                     <img
-                      src="/photo2.png"
+                      src={`${basePath}/photo2.png`}
                       alt="Nehman Rahimi"
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -63,7 +65,7 @@ const About = () => {
               {/* Badges */}
               <div className='flex flex-wrap gap-3 sm:gap-4'>
                 {/* Location Badge */}
-                <motion.div 
+                <motion.div
                   className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-4 py-2 sm:px-6 sm:py-4 hover:border-[#ffd700] transition-all cursor-default'
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
@@ -76,7 +78,7 @@ const About = () => {
                 </motion.div>
 
                 {/* Role Badge */}
-                <motion.div 
+                <motion.div
                   className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-4 py-2 sm:px-6 sm:py-4 hover:border-[#ffd700] transition-all cursor-default'
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
@@ -86,7 +88,7 @@ const About = () => {
                 </motion.div>
 
                 {/* Hackathon Winner Badge */}
-                <motion.div 
+                <motion.div
                   className='bg-[#1a1a1a] border-2 border-[#ffd700]/50 rounded-xl px-4 py-2 sm:px-6 sm:py-4 hover:border-[#ffd700] transition-all cursor-default'
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
@@ -99,13 +101,13 @@ const About = () => {
               {/* Description - Enhanced formatting */}
               <div className='space-y-4 sm:space-y-5 md:space-y-6'>
                 <p className='text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed break-words'>
-                  Aspiring full-stack developer based in Toronto, currently in my second year of studying Computer Science. 
+                  Aspiring full-stack developer based in Toronto, currently in my second year of studying Computer Science.
                   Passionate about learning, experimenting with new technologies, and creating applications that make an impact.
                 </p>
-                
+
                 <p className='text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed break-words'>
-                  Before transitioning to tech, I worked in sales at GUESS? and Urban Planet, where I exceeded targets by understanding 
-                  customer needs and solving problems quickly. These skills now translate to creating intuitive user experiences and 
+                  Before transitioning to tech, I worked in sales at GUESS? and Urban Planet, where I exceeded targets by understanding
+                  customer needs and solving problems quickly. These skills now translate to creating intuitive user experiences and
                   debugging complex issues.
                 </p>
 
