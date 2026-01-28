@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import React from "react";
-import {AiOutlineGithub } from "react-icons/ai";
-import {ImLinkedin} from "react-icons/im";
-import {HiOutlineMail} from "react-icons/hi";
-import {HiArrowDown} from "react-icons/hi";
+import { AiOutlineGithub } from "react-icons/ai";
+import { ImLinkedin } from "react-icons/im";
+import { HiOutlineMail } from "react-icons/hi";
+import { HiArrowDown } from "react-icons/hi";
 import { profilePhoto } from "../assets";
 import "./Hero.scss";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const Hero = () => {
   return (
@@ -97,7 +99,7 @@ const Hero = () => {
             className="flex flex-wrap gap-3 sm:gap-4 items-center justify-center md:justify-start mb-6 w-full"
           >
             <motion.a
-              href="/Nehman_Rahimi.pdf"
+              href={`${basePath}/Nehman_Rahimi.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black font-bold rounded-xl hover:shadow-lg hover:shadow-[#ffd700]/50 transition-all text-sm sm:text-base"
@@ -167,7 +169,7 @@ const Hero = () => {
         transition={{ delay: 1, duration: 0.6 }}
         className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center justify-center z-10'
       >
-        <motion.a 
+        <motion.a
           href='#about'
           className='flex flex-col items-center gap-2 text-[#ffd700] hover:text-[#ffed4e] transition-colors cursor-pointer'
           whileHover={{ scale: 1.05 }}
