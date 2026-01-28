@@ -607,6 +607,20 @@ export const otherProject = [
 
 const experiences = [
   {
+    title: "Software Developer (Contract)",
+    company_name: "Lionsgate Security Services",
+    icon: "https://img.icons8.com/color/96/security-checked.png",
+    iconBg: "#1a1a2e",
+    date: "Oct 2024 - Present",
+    link: "",
+    points: [
+      "Architected and deployed a client portal using Next.js 14 and PostgreSQL, enabling real-time security scheduling for 50+ corporate clients.",
+      "Built automated shift management system reducing manual dispatch time by 60%, processing 200+ weekly assignments.",
+      "Implemented role-based dashboards for guards, supervisors, and clients; achieved 95+ Lighthouse performance scores.",
+    ],
+    link: "https://github.com/NehmanDevelops/Lions-Gate-Securitywebsite",
+  },
+  {
     title: "Software Devloper",
     company_name: "Bank of New York Mellon",
     icon: bny,
