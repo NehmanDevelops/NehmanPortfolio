@@ -1,22 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',  // Enable static export for GitHub Pages
+  basePath: '/NehmanPortfolio',  // Your repo name
+  assetPrefix: '/NehmanPortfolio/',  // Prefix for assets
+  trailingSlash: true,  // Better compatibility with static hosting
   reactStrictMode: true,
   images: {
     domains: ['upload.wikimedia.org', 'static.wikia.nocookie.net'],
-    unoptimized: false,
+    unoptimized: true,  // Required for static export
   },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has type errors.
     ignoreBuildErrors: true,
   },
   webpack: (config, { isServer }) => {
-    // Increase memory limit for webpack
     config.optimization = {
       ...config.optimization,
       splitChunks: {
@@ -24,14 +23,12 @@ const nextConfig = {
         cacheGroups: {
           default: false,
           vendors: false,
-          // Vendor chunk
           vendor: {
             name: 'vendor',
             chunks: 'all',
             test: /node_modules/,
             priority: 20
           },
-          // Common chunk
           common: {
             name: 'common',
             minChunks: 2,
@@ -43,10 +40,8 @@ const nextConfig = {
         }
       }
     };
-    
     return config;
   },
 }
 
 module.exports = nextConfig
-

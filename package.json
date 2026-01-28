@@ -2,11 +2,15 @@
   "name": "jekyll-hyde-portfolio",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://NehmanDevelops.github.io/NehmanPortfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "export": "next build",
+    "predeploy": "npm run export",
+    "deploy": "gh-pages -d out",
     "sync": "powershell -ExecutionPolicy Bypass -File ./sync-from-github.ps1"
   },
   "dependencies": {
