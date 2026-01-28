@@ -830,7 +830,7 @@ const allProjects = [
       { name: "i18n", color: "green-text-gradient" },
       { name: "Lucide Icons", color: "pink-text-gradient" },
     ],
-    image: `${basePath}/Images/apex_demo.webp`,
+    image: `${basePath}/Images/apex_dashboard.png`,
     isVideo: false,
     source_link: "https://NehmanDevelops.github.io/Apex-Financial-Bank/",
     source_code_link: "https://github.com/NehmanDevelops/Apex-Financial-Bank",
