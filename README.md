@@ -132,7 +132,22 @@ Update the following with your information:
 
 ## 🚢 Deployment
 
-### Deploy to Vercel (Recommended)
+### 🌐 Live Demo
+
+**[View Live Portfolio →](https://NehmanDevelops.github.io/NehmanPortfolio)**
+
+### Deploy to GitHub Pages
+
+1. Build and deploy:
+```bash
+npm run deploy
+```
+
+2. Go to **Settings → Pages** in your GitHub repository
+3. Select `gh-pages` branch and `/ (root)` folder
+4. Your site will be live at `https://yourusername.github.io/NehmanPortfolio`
+
+### Deploy to Vercel (Alternative)
 
 1. Push your code to GitHub
 2. Import your repository in [Vercel](https://vercel.com)
