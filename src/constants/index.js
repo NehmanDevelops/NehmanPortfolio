@@ -407,7 +407,7 @@ export const webProject = [
       { name: "Full-Stack", color: "green-text-gradient" },
     ],
     image: `${basePath}/Images/insurance.png`,
-    source_link: "https://insurance-dash-board.vercel.app/",
+    source_link: "https://NehmanDevelops.github.io/Insurance-DashBoard/",
     source_code_link: "https://github.com/NehmanDevelops/Insurance-DashBoard",
   },
   {
@@ -864,7 +864,7 @@ const allProjects = [
       { name: "Full-Stack", color: "green-text-gradient" },
     ],
     image: `${basePath}/Images/insurance.png`,
-    source_link: "https://insurance-dash-board.vercel.app/",
+    source_link: "https://NehmanDevelops.github.io/Insurance-DashBoard/",
     source_code_link: "https://github.com/NehmanDevelops/Insurance-DashBoard",
   }, "fullstack"),
   categorizeProject({
