@@ -63,10 +63,10 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   const [showMore, setShowMore] = useState(false);
-  
+
   // Filter to show all sales and related experience (excluding highlighted RBC Academy card)
-  const allExperiences = experiences.filter(exp => 
-    (exp.title.includes("Sales") || exp.title.includes("Safety") || exp.title.includes("Retail") || exp.title.includes("Certification") || exp.title.includes("Food")) && !exp.isHighlighted
+  const allExperiences = experiences.filter(exp =>
+    (exp.title.includes("Sales") || exp.title.includes("Safety") || exp.title.includes("Retail") || exp.title.includes("Certification") || exp.title.includes("Food") || exp.title.includes("Security") || exp.title.includes("Contract")) && !exp.isHighlighted
   );
 
   // Show first 4 experiences initially, rest when "View More" is clicked
@@ -131,7 +131,7 @@ const Experience = () => {
             </motion.div>
           ))}
         </AnimatePresence>
-        
+
         {hasMore && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

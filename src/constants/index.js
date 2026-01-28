@@ -607,7 +607,7 @@ export const otherProject = [
 
 const experiences = [
   {
-    title: "Software Devloper",
+    title: "Software Developer",
     company_name: "Bank of New York Mellon",
     icon: bny,
     iconBg: "#383E56",
