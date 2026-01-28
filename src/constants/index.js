@@ -607,20 +607,6 @@ export const otherProject = [
 
 const experiences = [
   {
-    title: "Software Developer (Contract)",
-    company_name: "Lionsgate Security Services",
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffd700'%3E%3Cpath d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/%3E%3C/svg%3E",
-    iconBg: "#1a1a2e",
-    date: "Oct 2024 - Present",
-    link: "",
-    points: [
-      "Architected and deployed a client portal using Next.js 14 and PostgreSQL, enabling real-time security scheduling for 50+ corporate clients.",
-      "Built automated shift management system reducing manual dispatch time by 60%, processing 200+ weekly assignments.",
-      "Implemented role-based dashboards for guards, supervisors, and clients; achieved 95+ Lighthouse performance scores.",
-    ],
-    link: "https://github.com/NehmanDevelops/Lions-Gate-Securitywebsite",
-  },
-  {
     title: "Software Devloper",
     company_name: "Bank of New York Mellon",
     icon: bny,
@@ -704,6 +690,20 @@ const experiences = [
       "GitHub hosts many open source repositories that contribute to this event.",
     ],
     link: "https://dev.to/shinchancode",
+  },
+  {
+    title: "Software Developer (Contract)",
+    company_name: "Lionsgate Security Services — Toronto, ON",
+    icon: "https://img.icons8.com/color/480/000000/security-checked.png",
+    iconBg: "#E6DEDD",
+    date: "Oct 2024 – Present",
+    link: "",
+    points: [
+      "Architected and deployed a client portal using Next.js 14 and PostgreSQL, enabling real-time security scheduling for 50+ corporate clients.",
+      "Built automated shift management system reducing manual dispatch time by 60%, processing 200+ weekly assignments.",
+      "Implemented role-based dashboards for guards, supervisors, and clients; achieved 95+ Lighthouse performance scores.",
+    ],
+    link: "https://github.com/NehmanDevelops/Lions-Gate-Securitywebsite",
   },
   {
     title: "Sales Associate",
