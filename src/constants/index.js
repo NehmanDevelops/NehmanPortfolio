@@ -815,7 +815,7 @@ const allProjects = [
       { name: "SHAP", color: "green-text-gradient" },
     ],
     image: fraudguard,
-    source_link: "https://github.com/NehmanDevelops/Fraud-Control",
+    source_link: "https://NehmanDevelops.github.io/Fraud-Control/",
     source_code_link: "https://github.com/NehmanDevelops/Fraud-Control",
   }, "fullstack"),
   categorizeProject({
