@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',  // Enable static export for GitHub Pages
   basePath: '/NehmanPortfolio',  // Your repo name
-  assetPrefix: '/NehmanPortfolio/',  // Prefix for assets
+  assetPrefix: '/NehmanPortfolio',  // Prefix for assets (no trailing slash)
   trailingSlash: true,  // Better compatibility with static hosting
   reactStrictMode: true,
   images: {
