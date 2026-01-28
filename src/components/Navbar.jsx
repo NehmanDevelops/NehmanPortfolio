@@ -48,7 +48,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className='hidden sm:flex gap-6 items-center'>
           <a
-            href='/#about'
+            href='#about'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${active === "about" ? "text-[#ffd700]" : "text-gray-400"
               } hover:text-[#ffd700]`}
             onClick={() => setActive("about")}
@@ -56,7 +56,7 @@ const Navbar = () => {
             About
           </a>
           <a
-            href='/#education'
+            href='#education'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${active === "education" ? "text-[#ffd700]" : "text-gray-400"
               } hover:text-[#ffd700]`}
             onClick={() => setActive("education")}
@@ -64,7 +64,7 @@ const Navbar = () => {
             Education
           </a>
           <a
-            href='/#project'
+            href='#project'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${active === "project" ? "text-[#ffd700]" : "text-gray-400"
               } hover:text-[#ffd700]`}
             onClick={() => setActive("project")}
@@ -72,7 +72,7 @@ const Navbar = () => {
             Projects
           </a>
           <a
-            href='/#skills'
+            href='#skills'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${active === "skills" ? "text-[#ffd700]" : "text-gray-400"
               } hover:text-[#ffd700]`}
             onClick={() => setActive("skills")}
@@ -80,7 +80,7 @@ const Navbar = () => {
             Skills
           </a>
           <a
-            href='/#experience'
+            href='#experience'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${active === "experience" ? "text-[#ffd700]" : "text-gray-400"
               } hover:text-[#ffd700]`}
             onClick={() => setActive("experience")}
@@ -88,7 +88,7 @@ const Navbar = () => {
             Experience
           </a>
           <a
-            href='/#contact'
+            href='#contact'
             className={`text-[15px] font-medium cursor-pointer transition-colors ${active === "contact" ? "text-[#ffd700]" : "text-gray-400"
               } hover:text-[#ffd700]`}
             onClick={() => setActive("contact")}
@@ -111,7 +111,7 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="fixed inset-0 bg-black/95 z-20 flex flex-col items-center justify-center gap-8 sm:hidden">
             <a
-              href='/#about'
+              href='#about'
               className={`text-xl font-medium cursor-pointer transition-colors ${active === "about" ? "text-[#ffd700]" : "text-gray-400"
                 } hover:text-[#ffd700]`}
               onClick={() => {
@@ -122,7 +122,7 @@ const Navbar = () => {
               About
             </a>
             <a
-              href='/#education'
+              href='#education'
               className={`text-xl font-medium cursor-pointer transition-colors ${active === "education" ? "text-[#ffd700]" : "text-gray-400"
                 } hover:text-[#ffd700]`}
               onClick={() => {
@@ -133,7 +133,7 @@ const Navbar = () => {
               Education
             </a>
             <a
-              href='/#project'
+              href='#project'
               className={`text-xl font-medium cursor-pointer transition-colors ${active === "project" ? "text-[#ffd700]" : "text-gray-400"
                 } hover:text-[#ffd700]`}
               onClick={() => {
@@ -144,7 +144,7 @@ const Navbar = () => {
               Projects
             </a>
             <a
-              href='/#skills'
+              href='#skills'
               className={`text-xl font-medium cursor-pointer transition-colors ${active === "skills" ? "text-[#ffd700]" : "text-gray-400"
                 } hover:text-[#ffd700]`}
               onClick={() => {
@@ -155,7 +155,7 @@ const Navbar = () => {
               Skills
             </a>
             <a
-              href='/#experience'
+              href='#experience'
               className={`text-xl font-medium cursor-pointer transition-colors ${active === "experience" ? "text-[#ffd700]" : "text-gray-400"
                 } hover:text-[#ffd700]`}
               onClick={() => {
@@ -166,7 +166,7 @@ const Navbar = () => {
               Experience
             </a>
             <a
-              href='/#contact'
+              href='#contact'
               className={`text-xl font-medium cursor-pointer transition-colors ${active === "contact" ? "text-[#ffd700]" : "text-gray-400"
                 } hover:text-[#ffd700]`}
               onClick={() => {
