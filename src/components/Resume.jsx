@@ -7,6 +7,12 @@ import "./Resume.scss";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
+// Runtime-safe basePath detection
+const getBasePath = () => {
+  if (typeof window === 'undefined') return process.env.NEXT_PUBLIC_BASE_PATH || '';
+  return window.location.hostname.includes('github.io') ? '/NehmanPortfolio' : '';
+};
+
 const Resume = () => {
   return (
     <div className="mt-12 bg-black">

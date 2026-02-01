@@ -9,8 +9,12 @@ import {
 } from "../assets";
 import robloxIcon from "../components/download.png";
 
-// BasePath for GitHub Pages deployment
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+// BasePath for GitHub Pages deployment - runtime-safe detection
+const getBasePath = () => {
+  if (typeof window === 'undefined') return process.env.NEXT_PUBLIC_BASE_PATH || '';
+  return window.location.hostname.includes('github.io') ? '/NehmanPortfolio' : '';
+};
+const basePath = getBasePath();
 
 const profiles = [
   {

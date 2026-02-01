@@ -6,6 +6,12 @@ import CanvasLoader from "../Loader";
 
 const basePath = process.env.NODE_ENV === 'production' ? '/NehmanPortfolio' : '';
 
+// Runtime-safe basePath detection
+const getBasePath = () => {
+  if (typeof window === 'undefined') return process.env.NEXT_PUBLIC_BASE_PATH || '';
+  return window.location.hostname.includes('github.io') ? '/NehmanPortfolio' : '';
+};
+
 const Earth = () => {
   const earth = useGLTF(`${basePath}/planet/scene.gltf`);
 
