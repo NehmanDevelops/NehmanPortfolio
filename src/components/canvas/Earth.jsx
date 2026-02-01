@@ -1,18 +1,18 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const basePath = process.env.NODE_ENV === 'production' ? '/NehmanPortfolio' : '';
-
 // Runtime-safe basePath detection
 const getBasePath = () => {
-  if (typeof window === 'undefined') return process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (typeof window === 'undefined') return '';
   return window.location.hostname.includes('github.io') ? '/NehmanPortfolio' : '';
 };
 
 const Earth = () => {
+  // Get basePath at runtime inside the component
+  const basePath = useMemo(() => getBasePath(), []);
   const earth = useGLTF(`${basePath}/planet/scene.gltf`);
 
   return (
