@@ -102,7 +102,7 @@ const Navbar = () => {
             Contact
           </a>
           <a
-            href={`${basePath}/Nehman_Rahimi.pdf`}
+            href={`${basePath}/Images/Nehman_Rahimi_Resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className={`text-[15px] font-medium cursor-pointer transition-colors ${active === "resume" ? "text-[#ffd700]" : "text-gray-400"
@@ -183,7 +183,7 @@ const Navbar = () => {
               Contact
             </a>
             <a
-              href={`${basePath}/Nehman_Rahimi.pdf`}
+              href={`${basePath}/Images/Nehman_Rahimi_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className={`text-xl font-medium cursor-pointer transition-colors ${active === "resume" ? "text-[#ffd700]" : "text-gray-400"

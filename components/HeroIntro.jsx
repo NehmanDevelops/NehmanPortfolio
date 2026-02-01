@@ -162,7 +162,7 @@ export default function HeroIntro() {
               <HiOutlineMail className="text-xl" />
             </motion.a>
             <motion.a
-              href={`${basePath}/Nehman_Rahimi.pdf`}
+              href={`${basePath}/Images/Nehman_Rahimi_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full border-2 border-software-gold flex items-center justify-center text-software-gold hover:bg-software-gold hover:text-black transition-all duration-300 gap-2 text-sm sm:text-base"
