@@ -224,7 +224,7 @@ const Project = () => {
                   Get In Touch
                 </motion.a>
                 <motion.a
-                  href={`${basePath}/Nehman_Rahimi.pdf`}
+                  href={`${basePath}/Images/Nehman_Rahimi_Resume.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-[#ffd700] text-[#ffd700] font-bold rounded-xl hover:bg-[#ffd700] hover:text-black transition-all"

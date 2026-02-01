@@ -103,7 +103,7 @@ const Hero = () => {
             className="flex flex-wrap gap-3 sm:gap-4 items-center justify-center md:justify-start mb-6 w-full"
           >
             <motion.a
-              href={`${basePath}/Nehman_Rahimi.pdf`}
+              href={`${basePath}/Images/Nehman_Rahimi_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2.5 sm:px-6 sm:py-3 bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black font-bold rounded-xl hover:shadow-lg hover:shadow-[#ffd700]/50 transition-all text-sm sm:text-base"
