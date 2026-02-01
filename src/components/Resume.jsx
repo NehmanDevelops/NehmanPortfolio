@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { textVariant, fadeIn } from "../utils/motion";
 import "./Resume.scss";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
 // Runtime-safe basePath detection
 const getBasePath = () => {
-  if (typeof window === 'undefined') return process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (typeof window === 'undefined') return '';
   return window.location.hostname.includes('github.io') ? '/NehmanPortfolio' : '';
 };
 
 const Resume = () => {
+  // Get basePath at runtime inside the component
+  const basePath = useMemo(() => getBasePath(), []);
+
   return (
     <div className="mt-12 bg-black">
       <motion.div variants={textVariant()} className={`${styles.padding} min-h-[200px]`}>
@@ -26,7 +27,7 @@ const Resume = () => {
         className={`${styles.paddingX} pb-20 flex justify-center items-center`}
       >
         <motion.a
-          href={`${basePath}/Nehman_Rahimi.pdf`}
+          href={`${basePath}/Images/Nehman_Rahimi.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="resume-button bg-gradient-to-r from-[#ffd700] to-[#ffed4e] text-black px-12 py-6 rounded-xl font-bold text-xl shadow-lg shadow-[#ffd700]/50 hover:shadow-[#ffd700]/70 transition-all flex items-center gap-3"
