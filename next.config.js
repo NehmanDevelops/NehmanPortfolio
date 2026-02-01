@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production'
-const basePath = isProd ? '/NehmanPortfolio' : ''
+// Vercel sets VERCEL=1 in the build environment
+// On Vercel, use root ''. On GitHub Pages, use '/NehmanPortfolio'
+const isVercel = process.env.VERCEL === '1';
+const basePath = isVercel ? '' : '/NehmanPortfolio';
 
 const nextConfig = {
   output: 'export',  // Enable static export for GitHub Pages
-  basePath: basePath,  // Only apply basePath in production
-  assetPrefix: basePath,  // Only apply assetPrefix in production
+  basePath: basePath,  // Dynamic based on deployment target
+  assetPrefix: basePath,  // Dynamic based on deployment target
   trailingSlash: true,  // Better compatibility with static hosting
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
@@ -51,3 +53,4 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
